@@ -8,7 +8,9 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
-    use Notifiable;
+    public function role(){
+        return $this->hasOne(Role::class);
+    }
 
     /**
      * The attributes that are mass assignable.
