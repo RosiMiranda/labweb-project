@@ -1,8 +1,23 @@
+/* boton general */
 .btn {
     background-color: #572239 !important;
     color: white;
 }
-
 .btn:hover{
     border-color: #572239;
+}
+/*  verde oscuro */
+.dark-green{
+    background-color: #2F6665 !important;
+    color: white;
+}
+/* verde claro */
+.light-green{
+     background-color: #79B6B6 !important;
+    color: white;
+}
+/* rosa claro */
+.light-green{
+     background-color: #EDB0C9 !important;
+    color: black;
 }
