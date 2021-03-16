@@ -1,0 +1,26 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Product extends Model{
+
+
+    public function categories(){
+
+        return $this->belongsToMany(Category::class);
+    }
+
+    public function orders()
+    {
+        return $this->belongsTo(Order::class);
+    }
+
+        public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+}
+
