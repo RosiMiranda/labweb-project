@@ -21,3 +21,18 @@
      background-color: #EDB0C9 !important;
     color: black;
 }
+/* forms input styles */
+.green-inputs{
+    border-color: #2F6665;
+    border-radius: 65px;
+    color:white;
+}
+.title{
+    text-align: center;
+    font-family: 'Julius Sans One', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 50px;
+    line-height: 76px;
+    color:#2F6665;
+}
