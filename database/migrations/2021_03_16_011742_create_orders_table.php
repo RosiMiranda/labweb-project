@@ -16,6 +16,7 @@ class CreateOrdersTable extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('shoppingcarts_id')->unsigned();
+            $table->bigInteger('seller_id')->unsigned();
             $table->bigInteger('buyer_id')->unsigned();
             $table->integer('total');
             $table->timestamps();
@@ -23,6 +24,11 @@ class CreateOrdersTable extends Migration
             $table->foreign('shoppingcarts_id')
                     ->references('id')
                     ->on('shopping_carts')
+                    ->onCascade('delete');
+
+            $table->foreign('seller_id')
+                    ->references('id')
+                    ->on('users')
                     ->onCascade('delete');
             $table->foreign('buyer_id')
                     ->references('id')
