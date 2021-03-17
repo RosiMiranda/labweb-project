@@ -22,5 +22,7 @@ class Product extends Model{
         return $this->belongsTo(User::class);
     }
 
+    protected $fillable = ["name", "file_path", "created_at", "updated_at"];
+
 }
 
