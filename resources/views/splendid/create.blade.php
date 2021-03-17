@@ -30,9 +30,13 @@
                     <button type="submit" class="btn">Submit</button>
                 </div>
                 <div class="col-6">
-                    <div class="mb-3">
-                        <label for="formFile" class="form-label">Imagen</label>
-                        <input class="form-control" type="file" name="file" required>
+                    <div class="button-wrapper">
+                        <span class="label">
+                            <span class="material-icons" style="font-size: 100px !important">
+                                photo_camera
+                            </span>
+                        </span>
+                        <input type="file" name="upload" id="upload" class="upload-box" name="file">
                     </div>
                 </div>
             </div>
