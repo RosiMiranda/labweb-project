@@ -1,11 +1,11 @@
 @extends('layouts.main')
 
 @section('content')
-    <h2 class="title">Splendid</h2>
-        <div class="container arrows" style="width: 50%;">
-            <h4 style="opacity:0%;">hola</h4>
-        </div>
-        <br>
+    <h1 class="mt-5 title">Splendid</h1>
+    <div class="container arrows" style="width: 50%;">
+        <h4 style="opacity:0%;">hola</h4>
+    </div>
+    <br>
     <div class="container dark-green">
 
         <p class="text-center">

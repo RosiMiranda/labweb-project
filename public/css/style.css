@@ -1,13 +1,17 @@
 /* boton general */
-.btn {
+.btn, .nav-item:hover {
     background-color: #572239 !important;
     color: white;
     border-radius: 15px;
     opacity:91%;
 }
 .btn:hover{
-    border-color: #572239;
-
+    border-color: #572239 !important;
+}
+/* dropdowns options */
+.dropdown-item:focus, .dropdown-item:hover{
+    background-color: #572239 !important;
+    color: white;
 }
 /*  verde oscuro */
 .dark-green{
@@ -83,6 +87,9 @@
 .arrows{
     background-image: url('../../img/flecha.png');
      /* background-size:    5910px 38px;  */
+     height: 40px;
+     background-repeat: no-repeat;
+
 }
 
 /* links */
@@ -97,9 +104,13 @@ a, a:hover{
 .navbar-toggler collapsed, .navbar-toggler{
     background-color: white;
 }
-
 .navbar-toggler-icon{
     display: flex !important;
     justify-content: center;
+    align-items: center;
+}
+.cart-icon{
+    color: white;
+    display: flex;
     align-items: center;
 }

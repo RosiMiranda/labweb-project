@@ -29,6 +29,8 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="#">My Profile</a></li>
+                        <li><a class="dropdown-item" href="{{ route('splendid.index')}}">My Products</a></li>
+                        <li><a class="dropdown-item" href="{{ route('home.index')}}">My Orders</a></li>
                         <li><a class="dropdown-item" href="{{ route('auth.logout')}}">Log out</a></li>
                     </ul>
                 </li>
@@ -49,11 +51,11 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('store.index') }}" >Store</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('splendid.index') }}">My Products</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('home.index') }}" >My Orders</a>
+                        <li class="nav-item cart-icon">
+                            <a class="nav-link" href="{{ route('home.index') }}" >ShoppingCart</a>
+                            <span class="material-icons">
+                                shopping_cart
+                            </span>
                         </li>
                     </ul>
                 </div>
