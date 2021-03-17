@@ -21,7 +21,7 @@
 }
 /* rosa claro */
 .light-pink{
-     background-color: #EDB0C9 !important;
+    background-color: #EDB0C9 !important;
     color: black;
 }
 /* forms input styles */
@@ -30,6 +30,7 @@
     border-radius: 65px;
     color:white;
 }
+/* title for pages */
 .title{
     text-align: center;
     font-family: 'Julius Sans One', sans-serif;
@@ -39,7 +40,7 @@
     line-height: 76px;
     color:#2F6665;
 }
-
+/* for input file */
 .button-wrapper {
     position: relative;
     text-align: center;
@@ -47,7 +48,6 @@
     margin: 20%;
 
 }
-
 .button-wrapper span.label {
     position: relative;
     z-index: 0;
@@ -60,7 +60,6 @@
     justify-content: center;
     align-items: center;
 }
-
 #upload {
     position: absolute;
     display: inline-block;
@@ -72,14 +71,16 @@
     opacity: 0;
     cursor: pointer;
 }
+/* end for input file */
 
+/* rectangles blue */
 .divbackgroundFormsLogin{
     background-image: url('../../img/rectanguloazul.png');
     background-size:    560px 480px;
     text-align: center;
 }
+/* arrow for titles */
 .arrows{
-
     background-image: url('../../img/flecha.png');
      /* background-size:    5910px 38px;  */
 }
@@ -91,4 +92,14 @@ a, a:hover{
 /* the button fron the navbar */
 .main-btn{
     margin-right: 2rem;
+}
+/* toggle for avbar responsive */
+.navbar-toggler collapsed, .navbar-toggler{
+    background-color: white;
+}
+
+.navbar-toggler-icon{
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
 }
