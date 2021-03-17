@@ -20,6 +20,7 @@ Route::get('/', function () {
 });
 
 Route::resource('splendid', 'ProductController');
+Route::resource('store', 'StoreController');
 Route::resource('home', 'HomeController');
 
 
