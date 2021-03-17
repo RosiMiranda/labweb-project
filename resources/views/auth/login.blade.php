@@ -29,11 +29,11 @@
                 <br>
                 <br>
                 <div class="d-flex justify-content-center">
-                     <input type="submit" value="Inicio de sesión" class="btn btn:hover">
+                    <input type="submit" value="Inicio de sesión" class="btn btn:hover">
                 </div>
-                <br>  
-                
+                <br>
             </form>
-         </div>
-     </div>
+        </div>
+        <span>¿ No tienes una cuenta ? <a class="bold" href="{{ route('auth.register')}}">Registrate</a></span>
+    </div>
 @endsection

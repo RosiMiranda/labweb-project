@@ -4,7 +4,7 @@
 <h1 class="mt-5 title">Nueva Prenda</h1>
 <div class="card mt-5 light-green">
     <div class="card-body">
-        <form>
+        <form action="{{ route('splendid.store') }}" method="POST" >
             <div class="row">
                 <div class="col-6">
                     <div class="mb-3">

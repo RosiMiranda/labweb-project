@@ -76,9 +76,19 @@
 .divbackgroundFormsLogin{
     background-image: url('../../img/rectanguloazul.png');
     background-size:    560px 480px;
+    text-align: center;
 }
 .arrows{
 
     background-image: url('../../img/flecha.png');
      /* background-size:    5910px 38px;  */
+}
+
+/* links */
+a, a:hover{
+    color: white;
+}
+/* the button fron the navbar */
+.main-btn{
+    margin-right: 2rem;
 }

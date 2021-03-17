@@ -15,12 +15,11 @@
             <br>
             <br>
         </p>
-       
-     </div>
-     <br>
+    </div>
+    <br>
 
-    
-     <div id="carouselExampleCaptions" class="mx-auto carousel slide" data-ride="carousel" style="width: 50%;">
+
+    <div id="carouselExampleCaptions" class="mx-auto carousel slide" data-ride="carousel" style="width: 50%;">
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
             <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
@@ -28,7 +27,7 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                 <img src="{{ url('img/ropa1.png') }}" class="d-block w-100" alt="...">
+                <img src="{{ url('img/ropa1.png') }}" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
                     <h5>50% de descuento</h5>
                     <p>Solo del 22 al 30 de Abril</p>
@@ -51,8 +50,8 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
-    
 
-    
-    
+
+
+
 @endsection

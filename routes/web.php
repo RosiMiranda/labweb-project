@@ -16,13 +16,13 @@ use Illuminate\Support\Facades\Route;
 // Oscar commit test
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home.index');
 });
 
 Route::resource('splendid', 'ProductController');
 Route::resource('home', 'HomeController');
 
-//Route::get('register','AuthController@register')->name('auth.register');
+
 Route::get('register','AuthController@register')->name('auth.register');
 Route::post('doRegister','AuthController@doRegister')->name('auth.doRegister');
 Route::get('login','AuthController@login')->name('auth.login');
@@ -30,11 +30,3 @@ Route::post('login','AuthController@doLogin')->name('auth.do-login');
 Route::any('logout','AuthController@logout')->name('auth.logout');
 
 
-
-
-// Route::get('/register', [AuthController::class, 'register']);
-// Route::post('/do-register', [AuthController::class, 'doRegister'])->name('auth.do-register');
-// Route::get('login', [AuthController::class, 'login'])->name('auth.login');
-// Route::post('login', [AuthController::class, 'doLogin'])->name('auth.do-login');
-
-// Route::any('logout', [AuthController::class,'logout'])->name('auth.logout');
