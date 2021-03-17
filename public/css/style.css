@@ -2,9 +2,12 @@
 .btn {
     background-color: #572239 !important;
     color: white;
+    border-radius: 15px;
+    opacity:91%;
 }
 .btn:hover{
     border-color: #572239;
+
 }
 /*  verde oscuro */
 .dark-green{
@@ -32,7 +35,19 @@
     font-family: 'Julius Sans One', sans-serif;
     font-style: normal;
     font-weight: normal;
-    font-size: 50px;
+    font-size: 40px;
     line-height: 76px;
     color:#2F6665;
+}
+
+
+.divbackgroundFormsLogin{
+    
+    background-image: url('../../img/rectanguloazul.png');
+    background-size:    560px 480px;
+}
+.arrows{
+    
+    background-image: url('../../img/flecha.png');
+     /* background-size:    5910px 38px;  */
 }

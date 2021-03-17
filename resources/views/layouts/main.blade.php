@@ -27,7 +27,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link active" aria-current="page" href="{{ route('home.index') }}">Home</a>
                     </li>
                     <li class="nav-item">
                     <a class="nav-link" href="#">Link</a>
@@ -47,10 +47,18 @@
                     <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                     </li>
                 </ul>
-                <form class="d-flex">
+                <form class="d-flex mr-5">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
+                <li class="nav-item ml-5">
+                    <!-- <img src="{{ url('img/woman.png') }}" class="d-block w-100" alt="..." style="width: 10%;"> -->
+                    @auth
+                    
+                          {{ auth()->user()-> name }}
+                        <a class="ml-5" href="{{ route('auth.logout') }}">Logout</a>
+                    @endauth
+                </li>   
                 </div>
             </div>
         </nav>
