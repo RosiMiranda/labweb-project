@@ -49,7 +49,7 @@
                             <a class="nav-link" href="{{ route('home.index') }}" >Store</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('home.index') }}" >My Products</a>
+                            <a class="nav-link" href="{{ route('splendid.index') }}">My Products</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('home.index') }}" >My Orders</a>

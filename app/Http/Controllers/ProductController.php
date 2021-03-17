@@ -19,6 +19,7 @@ class ProductController extends Controller
         return view('splendid.index');
     }
 
+
     /**
      * Show the form for creating a new resource.
      *
