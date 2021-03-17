@@ -39,8 +39,16 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        // check image
+        if($request->hasFile('file')){
+            $request->validate(['image' => 'mimes:jpeg,bmp,png']);
+        }
 
         $user = Auth::user();
+        $request->file->store('product', 'public');
+
+
+
         $arr = $request->input();
         $product = new Product();
         $product -> description = $arr['description'];
@@ -55,7 +63,7 @@ class ProductController extends Controller
         $category = Category::find($request->get('categories'));
         $product->categories()->attach($category);
 
-        return redirect()->route('/');
+        return redirect()->route('splendid.index');
 
     }
 

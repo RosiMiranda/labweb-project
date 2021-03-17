@@ -4,7 +4,8 @@
 <h1 class="mt-5 title">Nueva Prenda</h1>
 <div class="card mt-5 light-green">
     <div class="card-body">
-        <form action="{{ route('splendid.store') }}" method="POST" >
+        <form action="{{ route('splendid.store') }}" method="POST" enctype="multipart/form-data">
+        @csrf
             <div class="row">
                 <div class="col-6">
                     <div class="mb-3">
@@ -16,15 +17,15 @@
                     </div>
                     <div class="mb-3">
                         <label  class="form-label">Descripción</label>
-                        <input type="text" class="form-control dark-green green-inputs" >
+                        <input type="text" class="form-control dark-green green-inputs" name="description" >
                     </div>
                     <div class="mb-3">
                         <label  class="form-label">Precio</label>
-                        <input type="text" class="form-control dark-green green-inputs" >
+                        <input type="text" class="form-control dark-green green-inputs" name="price">
                     </div>
                     <div class="mb-3">
                         <label  class="form-label">Talla</label>
-                        <input type="text" class="form-control dark-green green-inputs" >
+                        <input type="text" class="form-control dark-green green-inputs" name="size">
                     </div>
 
                     <button type="submit" class="btn">Submit</button>
@@ -36,7 +37,7 @@
                                 photo_camera
                             </span>
                         </span>
-                        <input type="file" name="upload" id="upload" class="upload-box" name="file">
+                        <input type="file" id="upload" class="upload-box" name="file">
                     </div>
                 </div>
             </div>
