@@ -5,4 +5,8 @@
 <div class="container arrows" style="width: 50%;">
     <h4 style="opacity:0%;">hola</h4>
 </div>
+<div class='container'>
+        <x-filters></x-filters>
+</div>
+    
 @endsection
