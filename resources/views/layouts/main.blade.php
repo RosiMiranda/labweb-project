@@ -17,7 +17,7 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
 
 
-        <title>Hello, world!</title>
+        <title>Splendid</title>
     </head>
     <body>
         <nav class="navbar navbar-expand-lg" style="background-color:#BA2E66;">
@@ -28,9 +28,9 @@
                         Bienvenido </br> {{ auth()->user()-> name }}
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">My Profile</a></li>
+                        <li><a class="dropdown-item" href="{{ route('user.profile')}}">My Profile</a></li>
                         <li><a class="dropdown-item" href="{{ route('splendid.index')}}">My Products</a></li>
-                        <li><a class="dropdown-item" href="{{ route('home.index')}}">My Orders</a></li>
+                        <li><a class="dropdown-item" href="{{ route('order.index')}}">My Orders</a></li>
                         <li><a class="dropdown-item" href="{{ route('auth.logout')}}">Log out</a></li>
                     </ul>
                 </li>
@@ -52,7 +52,7 @@
                             <a class="nav-link" href="{{ route('store.index') }}" >Store</a>
                         </li>
                         <li class="nav-item cart-icon">
-                            <a class="nav-link" href="{{ route('home.index') }}" >ShoppingCart</a>
+                            <a class="nav-link" href="{{ route('user.cart') }}" >ShoppingCart</a>
                             <span class="material-icons">
                                 shopping_cart
                             </span>
