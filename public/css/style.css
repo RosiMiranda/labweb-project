@@ -154,8 +154,6 @@ a, a:hover{
 
 .hyperspan
 {
-    background: red;
-    opacity: .3;
     position:absolute;
     width:100%;
     height:100%;
