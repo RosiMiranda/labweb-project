@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Product;
 use Illuminate\Http\Request;
 
 class StoreController extends Controller
@@ -13,7 +14,8 @@ class StoreController extends Controller
      */
     public function index()
     {
-        return view('splendid.store');
+        $products = Product::all();
+        return view('splendid.store',['products' => $products]);
     }
 
     /**
