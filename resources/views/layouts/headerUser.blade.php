@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
     <head>
@@ -36,25 +35,37 @@
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Dropdown
                     </a>
-                    <ul class="user dropdown-menu" aria-labelledby="navbarDropdown">
-                        @auth
-                        <li>{{ auth()->user()-> name }}</li>
-                        <li> <a class="ml-5" href="{{ route('auth.logout') }}">Logout</a></li>
-                        @endauth
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
                     </ul>
                     </li>
                     <li class="nav-item">
                     <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                     </li>
-
-                    
-                
-                <form class="d-flex mr-5">
+                </ul>
+                <form class="d-flex">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
-                
-                </div> 
+                <li class="nav-item">
+                    @if (Route::has('login'))
+                        <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+                            @auth
+                                <a href="{{ url('/home') }}" class="text-sm text-gray-700 underline">Home</a>
+                            @else
+                                <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Log in</a>
+
+                                @if (Route::has('register'))
+                                    <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
+                                @endif
+                            @endauth
+                        </div>
+                    @endif
+                </li>   
+                </div>
             </div>
         </nav>
         <div class='container'>
