@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use App\Product;
 use App\Category;
+use Illuminate\Http\Request;
 
-class ProductController extends Controller
+class StoreController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,10 +17,8 @@ class ProductController extends Controller
     {
         $products = Product::all();
         $categories = Category::all();
-        return view('splendid.index',['products' => $products,'categories' => $categories]);
-        
+        return view('splendid.store',['products' => $products,'categories' => $categories]);
     }
-
 
     /**
      * Show the form for creating a new resource.
@@ -30,8 +27,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $categories = Category::all();
-        return view('splendid.create', ['categories' => $categories]);
+        //
     }
 
     /**
@@ -42,32 +38,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        // check image
-        if($request->hasFile('file')){
-            $request->validate(['image' => 'mimes:jpeg,bmp,png']);
-        }
-
-        $user = Auth::user();
-        $request->file->store('product', 'public');
-
-
-
-        $arr = $request->input();
-        $product = new Product();
-        $product -> description = $arr['description'];
-        $product -> user_id = $user -> id ;
-        $product -> price = $arr['price'];
-        $product -> size = $arr['size'];
-        $product -> file_path = $request->file->hashName();
-
-        $product -> save();
-
-
-        $category = Category::find($request->get('categories'));
-        $product->categories()->attach($category);
-
-        return redirect()->route('splendid.index');
-
+        //
     }
 
     /**
@@ -76,9 +47,9 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Product $product)
     {
-        //
+        return view('splendid.show',['product' => $product]);
     }
 
     /**

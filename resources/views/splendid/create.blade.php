@@ -2,9 +2,13 @@
 
 @section('content')
 <h1 class="mt-5 title">Nueva Prenda</h1>
+<div class="container arrows" style="width: 50%;">
+    <h4 style="opacity:0%;">hola</h4>
+</div>
 <div class="card mt-5 light-green">
     <div class="card-body">
-        <form>
+        <form action="{{ route('splendid.store') }}" method="POST" enctype="multipart/form-data">
+        @csrf
             <div class="row">
                 <div class="col-6">
                     <div class="mb-3">
@@ -16,23 +20,27 @@
                     </div>
                     <div class="mb-3">
                         <label  class="form-label">Descripción</label>
-                        <input type="text" class="form-control dark-green green-inputs" >
+                        <input type="text" class="form-control dark-green green-inputs" name="description" >
                     </div>
                     <div class="mb-3">
                         <label  class="form-label">Precio</label>
-                        <input type="text" class="form-control dark-green green-inputs" >
+                        <input type="text" class="form-control dark-green green-inputs" name="price">
                     </div>
                     <div class="mb-3">
                         <label  class="form-label">Talla</label>
-                        <input type="text" class="form-control dark-green green-inputs" >
+                        <input type="text" class="form-control dark-green green-inputs" name="size">
                     </div>
 
                     <button type="submit" class="btn">Submit</button>
                 </div>
                 <div class="col-6">
-                    <div class="mb-3">
-                        <label for="formFile" class="form-label">Imagen</label>
-                        <input class="form-control" type="file" name="file" required>
+                    <div class="button-wrapper">
+                        <span class="label">
+                            <span class="material-icons" style="font-size: 100px !important">
+                                photo_camera
+                            </span>
+                        </span>
+                        <input type="file" id="upload" class="upload-box" name="file">
                     </div>
                 </div>
             </div>
