@@ -114,3 +114,88 @@ a, a:hover{
     display: flex;
     align-items: center;
 }
+
+.card-store-new{
+    margin: 0 auto;
+    float: none;
+    margin-bottom: 3em;
+    padding: 2em 2em 0em 2em;
+    background-color: #2F6665;
+    border: 2px solid #79B6B6;
+    border-radius: 3rem;
+    
+}
+
+.card-store{
+    margin: 0 auto;
+    float: none;
+    margin-bottom: 3em;
+    padding: 2em 2em 0em 2em;
+    background-color: #79b6b6;
+    border: 2px solid #572239;
+    border-radius: 3rem;
+    
+}
+
+.card-store .card-body {
+    margin-top: 2em;
+    background-color: #BA2E66;
+    border: 3px solid white;
+    padding: 0em;
+}
+
+.card-store-new .card-body {
+    margin-top: 2em;
+    background-color: #2F6665;
+    border: 3px solid white;
+    padding: 0em;
+    margin-bottom: 20px;
+}
+
+.hyperspan
+{
+    position:absolute;
+    width:100%;
+    height:100%;
+    left:0;
+    top:0;
+    z-index:1;
+}
+
+.center-div{
+    position:absolute; 
+    width:100px; 
+    top:50%; 
+    left:50%;
+}
+
+.divProductBackground{
+    background-image: url('../../img/rectangulorosa.png');
+    background-size:  100%  100%;
+    text-align: center;
+
+}
+
+.divProductBackground .column{
+    width: 50%;
+    height: 648px;
+    padding-top: 5em;
+}
+
+.divProductBackground h3{
+    padding: 1em;
+    padding-left: 2em;
+    font-weight: bold;
+}
+
+.divProductBackground h3,h1{
+    padding: 1em;
+    font-weight: bold;
+}
+
+.divProductBackground img{
+    height: 60%;
+    border: 3px solid white;
+    margin-right: 6em;
+    border-radius: 3em;
+}

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Product;
+use App\Category;
 use Illuminate\Http\Request;
 
 class StoreController extends Controller
@@ -13,7 +15,9 @@ class StoreController extends Controller
      */
     public function index()
     {
-        return view('splendid.store');
+        $products = Product::all();
+        $categories = Category::all();
+        return view('splendid.store',['products' => $products,'categories' => $categories]);
     }
 
     /**
@@ -43,9 +47,9 @@ class StoreController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Product $product)
     {
-        //
+        return view('splendid.show',['product' => $product]);
     }
 
     /**
