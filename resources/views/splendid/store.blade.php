@@ -6,7 +6,16 @@
     <h4 style="opacity:0%;">hola</h4>
 </div>
 <div class='container '>
-        <x-filters></x-filters>
+    <h3 class="title">Category</h3>
+    <div class="row">
+            @foreach ($categories as $category)
+                    <x-category title="{{$category->name}}"></x-category>
+            @endforeach
+    </div>
+
+    <div class="row col-12">
+            <h4 style="width:100%; padding:1em;" class="text-center">Descripcion de categoria</h4>
+    </div>
         <div class="row row-cols-3 row-cols-md-2 g-4" >
             @foreach ($products as $product)
                 <x-product-card description="{{$product->description}}" price="{{$product->price}}" />
