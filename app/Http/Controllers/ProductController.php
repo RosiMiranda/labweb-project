@@ -16,7 +16,10 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return view('splendid.index');
+        $products = Product::all();
+        $categories = Category::all();
+        return view('splendid.index',['products' => $products,'categories' => $categories]);
+        
     }
 
 
