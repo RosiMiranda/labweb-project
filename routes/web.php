@@ -23,7 +23,7 @@ Route::resource('splendid', 'ProductController');
 Route::resource('store', 'StoreController');
 Route::resource('home', 'HomeController');
 
-
+Route::get('products/{product}','StoreController@show')->name('product.show');
 Route::get('register','AuthController@register')->name('auth.register');
 Route::post('doRegister','AuthController@doRegister')->name('auth.doRegister');
 Route::get('login','AuthController@login')->name('auth.login');
