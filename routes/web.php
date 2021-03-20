@@ -24,7 +24,8 @@ Route::resource('store', 'StoreController')->middleware('user_auth');
 Route::resource('home', 'HomeController');
 Route::resource('order', 'OrdersController')->middleware('user_auth');
 
-
+Route::get('products/{product}','StoreController@show')->name('product.show');
+Route::get('my_products/{product}','ProductController@show')->name('my_product.show');
 Route::get('register','AuthController@register')->name('auth.register');
 Route::get('profile','AuthController@getProfile')->name('user.profile')->middleware('user_auth');;
 Route::get('mycart','ShoppingCartController@getCart')->name('user.cart')->middleware('user_auth');;
