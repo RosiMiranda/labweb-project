@@ -1,9 +1,10 @@
-/* boton general */
+boton general
 .btn, .nav-item:hover {
     background-color: #572239 !important;
     color: white;
     border-radius: 15px;
     opacity:91%;
+    font-family: "Roboto Slab", serif;
 }
 .btn:hover{
     border-color: #572239 !important;
@@ -31,18 +32,18 @@
 /* forms input styles */
 .green-inputs{
     border-color: #2F6665;
-    border-radius: 65px;
     color:white;
+    width: 100%;
 }
 /* title for pages */
 .title{
     text-align: center;
-    font-family: 'Julius Sans One', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 40px;
     line-height: 76px;
     color:#2F6665;
+    margin: 0;
 }
 /* for input file */
 .button-wrapper {
@@ -78,23 +79,23 @@
 /* end for input file */
 
 /* rectangles blue */
-.divbackgroundFormsLogin{
-    background-image: url('../../img/rectanguloazul.png');
-    background-size:    560px 480px;
+.div-background-forms-login{
+    background-color: #8fb8cc;
     text-align: center;
 }
 /* arrow for titles */
 .arrows{
     background-image: url('../../img/flecha.png');
      /* background-size:    5910px 38px;  */
-     height: 40px;
-     background-repeat: no-repeat;
-
+    height: 40px;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 /* links */
 a, a:hover{
     color: white;
+    font-family: "Roboto Slab", serif;
 }
 /* the button fron the navbar */
 .main-btn{
@@ -123,13 +124,13 @@ a, a:hover{
     background-color: #2F6665;
     border: 2px solid #79B6B6;
     border-radius: 3rem;
-    
+
 }
 
 .user{
-    
+
     background-image: url('../../img/woman.png');
-      background-size:    35px 25px;  
+    background-size:    35px 25px;
 }
 .card-store{
     margin: 0 auto;
@@ -139,7 +140,7 @@ a, a:hover{
     background-color: #79b6b6;
     border: 2px solid #572239;
     border-radius: 3rem;
-    
+
 }
 
 .card-store .card-body {
@@ -168,9 +169,9 @@ a, a:hover{
 }
 
 .center-div{
-    position:absolute; 
-    width:100px; 
-    top:50%; 
+    position:absolute;
+    width:100px;
+    top:50%;
     left:50%;
 }
 
@@ -193,14 +194,15 @@ a, a:hover{
     font-weight: bold;
 }
 
-.divProductBackground h3,h1{
-    padding: 1em;
-    font-weight: bold;
-}
+
 
 .divProductBackground img{
     height: 60%;
     border: 3px solid white;
     margin-right: 6em;
     border-radius: 3em;
+}
+
+.row {
+    margin: 0;
 }

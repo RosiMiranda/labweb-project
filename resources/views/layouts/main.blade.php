@@ -9,9 +9,10 @@
 
         <!-- font -->
         <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap" rel="stylesheet">
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../../css/main.css" />
         <link rel="stylesheet" href="../../css/style.css">
         <!-- google icons -->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
@@ -36,7 +37,7 @@
                 </li>
                 @endauth
                 @if (!Auth::check())
-                <a class="btn" href="{{ route('auth.login')}}"> Sign in</a>
+                <a class="button primary" href="{{ route('auth.login')}}"> Sign in</a>
                 @endif
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -61,7 +62,7 @@
                 </div>
             </div>
         </nav>
-        <div class='container'>
+        <div>
             @yield('content')
         </div>
 

@@ -1,6 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
+<div class="container">
     <h1 class="title">Inicio sesión</h1>
     <div class="container arrows" style="width: 50%;">
         <h4 style="opacity:0%;">hola</h4>
@@ -14,13 +15,10 @@
             </ul>
         </div>
     @endif
-    <div class=" container divbackgroundFormsLogin" style="width: 50%;">
+    <div class=" container div-background-forms-login" style="max-width:800px;">
         <div class="row justify-content-center">
             <form action="{{ route('auth.do-login') }}" method="POST" class="mt-5 mb-5">
                 @csrf
-                <br>
-                <br>
-                <br>
                 <label for="">Correo:</label><br>
                 <input type="text" name="email" id="">
                 <br>
@@ -36,4 +34,5 @@
         </div>
         <span>¿ No tienes una cuenta ? <a class="bold" href="{{ route('auth.register')}}">Registrate</a></span>
     </div>
+</div>
 @endsection
