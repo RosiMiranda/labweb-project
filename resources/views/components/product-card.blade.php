@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="../../css/style.css">
 
 <div class="col text-center">
     <div class="card card-store text-center text-white" style="width: 18rem;">

@@ -96,6 +96,7 @@ boton general
 a, a:hover{
     color: white;
     font-family: "Roboto Slab", serif;
+    text-decoration: none;
 }
 /* the button fron the navbar */
 .main-btn{
@@ -116,46 +117,54 @@ a, a:hover{
     align-items: center;
 }
 
-.card-store-new{
-    margin: 0 auto;
-    float: none;
-    margin-bottom: 3em;
-    padding: 2em 2em 0em 2em;
-    background-color: #2F6665;
-    border: 2px solid #79B6B6;
-    border-radius: 3rem;
-
-}
 
 .user{
 
     background-image: url('../../img/woman.png');
     background-size:    35px 25px;
 }
+/* all for card products */
 .card-store{
     margin: 0 auto;
     float: none;
     margin-bottom: 3em;
     padding: 2em 2em 0em 2em;
     background-color: #79b6b6;
-    border: 2px solid #572239;
-    border-radius: 3rem;
+    border-radius: 0.375em;
+    min-height: 380px;
+    max-height: 380px;
 
 }
 
 .card-store .card-body {
     margin-top: 2em;
-    background-color: #BA2E66;
-    border: 3px solid white;
+    border: 3px solid #2F6665;
+    border-radius: 0.375em;
     padding: 0em;
+    font-size: 20px;
 }
+.card-store-new{
+    margin: 0 auto;
+    float: none;
+    padding: 2em 2em 0em 2em;
+    background-color: #2F6665;
+    margin-bottom: 3em;
+    min-height: 380px;
+    max-height: 380px;
+    width: 288px;
 
+}
 .card-store-new .card-body {
     margin-top: 2em;
-    background-color: #2F6665;
+    background-color: #79b6b6;
     border: 3px solid white;
     padding: 0em;
-    margin-bottom: 20px;
+    border-radius: 0.375em;
+    font-size: 25px;
+}
+
+ .card-title {
+    color: white;
 }
 
 .hyperspan
@@ -166,13 +175,6 @@ a, a:hover{
     left:0;
     top:0;
     z-index:1;
-}
-
-.center-div{
-    position:absolute;
-    width:100px;
-    top:50%;
-    left:50%;
 }
 
 .divProductBackground{
@@ -205,4 +207,25 @@ a, a:hover{
 
 .row {
     margin: 0;
+}
+
+.home-imgs-one{
+    background-image:url('../../img/ropa1.png');
+    height: 400px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.home-imgs-two{
+    background-image:url('../../img/ropa2.png');
+    height: 400px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.align-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

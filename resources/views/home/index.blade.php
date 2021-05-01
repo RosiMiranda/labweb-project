@@ -65,38 +65,26 @@
 
 
     @auth
-    <h1 class="mt-5 title">Splendid</h1>
-    <div class="container arrows" style="width: 50%;">
-        <h4 style="opacity:0%;">hola</h4>
-    </div>
-    <div class="container dark-green">
+    <div class="container">
+        <h1 class="mt-5 title">¿Que quieres checar hoy?</h1>
+        <div class="container arrows" style="width: 50%;">
+            <h4 style="opacity:0%;">hola</h4>
+        </div>
+        <br>
+        <div class="container" style="height: 200px">
+            <div class="row ">
+                <div class="col-6 d-block w-100 text-center " >
+                    <div class="home-imgs-one align-center">
+                        <a class="button primary" href="{{ route('store.index')}}">Comprar</a>
+                    </div>
 
-        <p class="text-center display-4">
-            <br>
-            ¿Que quieres checar hoy?
-            <br>
-            <br>
-        </p>
-    </div>
-    <br>
-    <div class="container" style="height: 200px">
-        <div class="row ">
-            <div class="col-6 d-block w-100 text-center"
-                style="background-image:url('img/ropa1.png');
-                    height: 400px;
-                    background-position: center;
-                    background-repeat: no-repeat;
-                    background-size: cover;"
-                >
-                <a class="btn center-div" href="{{ route('store.index')}}">Comprar</a>
-            </div>
-            <div class="col-6 d-block w-100 text-center home"
-                style="background-image:url('img/ropa2.png');
-                    background-position: center;
-                    background-repeat: no-repeat;
-                    background-size: cover;"
-                >
-                <a class="btn center-div" href="{{ route('splendid.index')}}">Vender</a>
+                </div>
+                <div class="col-6 d-block w-100 text-center home-imgs-two">
+                    <div class="home-imgs-two align-center">
+                        <a class="button primary" href="{{ route('splendid.index')}}">Vender</a>
+                    </div>
+
+                </div>
             </div>
         </div>
     </div>

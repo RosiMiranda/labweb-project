@@ -2074,7 +2074,7 @@ button,
   display: -ms-flex;
   display: flex;
   border-bottom: solid 5px #2F6665;
-  padding: 6em 0 1em 0;
+  padding: 2em 0 1em 0;
   position: relative; }
   #header > * {
     -moz-flex: 1;
@@ -2091,7 +2091,7 @@ button,
     text-align: right; }
   @media screen and (max-width: 1680px) {
     #header {
-      padding-top: 5em; } }
+      padding-top: 2rem; } }
   @media screen and (max-width: 736px) {
     #header {
       padding-top: 6.5em; }
