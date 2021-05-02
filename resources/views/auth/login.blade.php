@@ -27,7 +27,7 @@
                 <br>
                 <br>
                 <div class="d-flex justify-content-center">
-                    <input type="submit" value="Inicio de sesión" class="btn btn:hover">
+                    <input type="submit" value="Inicio de sesión" class="button primary">
                 </div>
                 <br>
             </form>

@@ -142,6 +142,7 @@ a, a:hover{
     border-radius: 0.375em;
     padding: 0em;
     font-size: 20px;
+    background-color: #C75784;
 }
 .card-store-new{
     margin: 0 auto;
@@ -177,38 +178,23 @@ a, a:hover{
     z-index:1;
 }
 
-.divProductBackground{
-    background-image: url('../../img/rectangulorosa.png');
+/* card for product show */
+.div-product{
     background-size:  100%  100%;
     text-align: center;
-
+    background-color: #e3abc1;
+    border-radius: 0.375em;
 }
-
-.divProductBackground .column{
-    width: 50%;
-    height: 648px;
-    padding-top: 5em;
+.col-product-info{
+    padding: 2rem 2rem 2rem 4rem;
+    text-align: initial;
 }
-
-.divProductBackground h3{
-    padding: 1em;
-    padding-left: 2em;
-    font-weight: bold;
-}
-
-
-
-.divProductBackground img{
-    height: 60%;
+.col-product-img{
     border: 3px solid white;
-    margin-right: 6em;
-    border-radius: 3em;
+    width: 100%;
 }
 
-.row {
-    margin: 0;
-}
-
+/* for miages in home */
 .home-imgs-one{
     background-image:url('../../img/ropa1.png');
     height: 400px;
@@ -223,9 +209,15 @@ a, a:hover{
     background-repeat: no-repeat;
     background-size: cover;
 }
-
+/* general */
 .align-center{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.row {
+    margin: 0;
+}
+.category:hover{
+    cursor:default;
 }
