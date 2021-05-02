@@ -8,18 +8,19 @@ class ProductCard extends Component
 {
     public $description;
     public $price;
-    public $file_path;
+    public $file;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct(string $description, float $price)
+    public function __construct(string $description, float $price, string $file)
     {
         $this->description = $description;
         $this->price = $price;
+        $this->file = $file;
     }
-    
+
 
     /**
      * Get the view / contents that represent the component.

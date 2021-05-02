@@ -34,7 +34,7 @@
                 </div>
                 @foreach ($products as $product)
                     <a href="{{ route('my_product.show', ['product' => $product]) }}">
-                        <x-product-card description="{{$product->description}}" price="{{$product->price}}" />
+                        <x-product-card description="{{$product->description}}"  price="{{$product->price}}" file="{{$product->file_path}}"/>
                     </a>
                 @endforeach
             </div>

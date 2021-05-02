@@ -50,7 +50,7 @@ class StoreController extends Controller
      */
     public function show(Product $product)
     {
-        return view('splendid.show',['product' => $product]);
+        return view('splendid.single-product',['product' => $product]);
     }
 
     /**

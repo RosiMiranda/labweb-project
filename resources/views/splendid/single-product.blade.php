@@ -16,7 +16,7 @@
             <button class="button primary mt-3">Agregar al carrito</button>
         </div>
         <div class="col-12 col-sm-6  col-product-info">
-            <img src="{{ url('img/jersey.png') }}" alt="..." class="col-product-img">
+            <img src="uploads/products/{{$product->file_path}}" alt="..." class="col-product-img">
         </div>
 
     </div>

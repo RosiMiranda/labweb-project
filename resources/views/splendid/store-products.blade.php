@@ -21,7 +21,7 @@
             <div class="row row-cols-3 row-cols-md-2 g-4" >
                 @foreach ($products as $product)
                     <a href="{{ route('product.show', ['product' => $product]) }}">
-                        <x-product-card description="{{$product->description}}" price="{{$product->price}}" />
+                        <x-product-card description="{{$product->description}}"  price="{{$product->price}}" file="{{$product->file_path}}"/>
                     </a>
                 @endforeach
             </div>

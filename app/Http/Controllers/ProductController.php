@@ -48,7 +48,10 @@ class ProductController extends Controller
         }
 
         $user = Auth::user();
-        $request->file->store('product', 'public');
+        $file = $request->file('image');
+        $filename = $request->file->hashName();
+        $request->file->move('uploads/products/', $filename);
+
 
 
 
@@ -58,7 +61,7 @@ class ProductController extends Controller
         $product -> user_id = $user -> id ;
         $product -> price = $arr['price'];
         $product -> size = $arr['size'];
-        $product -> file_path = $request->file->hashName();
+        $product -> file_path = $filename;
 
         $product -> save();
 
