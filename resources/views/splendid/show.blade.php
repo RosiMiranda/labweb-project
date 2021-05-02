@@ -10,7 +10,7 @@
             <h2>Categorias:</h2>
             <div class="row">
             @foreach ($product->categories as $category)
-                <div class="button category">{{$category->name }}</div>
+                <li class="button category">{{$category->name }}</li>
             @endforeach
             </div>
             <button class="button primary mt-3">Agregar al carrito</button>
