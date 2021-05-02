@@ -18,8 +18,8 @@ class ProductController extends Controller
     {
         $products = Product::all();
         $categories = Category::all();
-        return view('splendid.index',['products' => $products,'categories' => $categories]);
-        
+        return view('splendid.my-products',['products' => $products,'categories' => $categories]);
+
     }
 
 
@@ -31,7 +31,7 @@ class ProductController extends Controller
     public function create()
     {
         $categories = Category::all();
-        return view('splendid.create', ['categories' => $categories]);
+        return view('splendid.create-product', ['categories' => $categories]);
     }
 
     /**
@@ -78,7 +78,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        return view('splendid.show',['product' => $product]);
+        return view('splendid.single-product',['product' => $product]);
     }
 
     /**

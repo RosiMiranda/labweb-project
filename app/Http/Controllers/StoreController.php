@@ -18,7 +18,7 @@ class StoreController extends Controller
     {
         $products = Product::all();
         $categories = Category::all();
-        return view('splendid.store',['products' => $products,'categories' => $categories]);
+        return view('splendid.store-products',['products' => $products,'categories' => $categories]);
     }
 
     /**
