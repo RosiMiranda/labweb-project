@@ -119,7 +119,6 @@ a, a:hover{
 
 
 .user{
-
     background-image: url('../../img/woman.png');
     background-size:    35px 25px;
 }
@@ -128,12 +127,9 @@ a, a:hover{
     margin: 0 auto;
     float: none;
     margin-bottom: 3em;
-    padding: 2em 2em 0em 2em;
-    background-color: #79b6b6;
-    border-radius: 0.375em;
+    border-radius: 0.4em;
     min-height: 380px;
     max-height: 380px;
-
 }
 
 .card-store .card-body {
@@ -141,17 +137,19 @@ a, a:hover{
     border-radius: 0.375em;
     padding: 0em;
     font-size: 20px;
-    background-color: #C75784;
+    background-color: rgb(199,87,132, 0.8);
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    width: 100%;
 }
 .card-store-new{
-    margin: 0 auto;
-    float: none;
-    padding: 2em 2em 0em 2em;
     background-color: #2F6665;
     margin-bottom: 3em;
     min-height: 380px;
     max-height: 380px;
     width: 288px;
+    border-radius: 0.375em;
 
 }
 .card-store-new .card-body {
@@ -161,6 +159,10 @@ a, a:hover{
     padding: 0em;
     border-radius: 0.375em;
     font-size: 25px;
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    width: 100%;
 }
 
  .card-title {
@@ -219,4 +221,12 @@ a, a:hover{
 }
 .category:hover{
     cursor:default;
+
+}
+
+.card-img-top{
+    min-height: 100%;
+    position: absolute;
+    left: 0%;
+    top: 0%;
 }
