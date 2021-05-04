@@ -33,5 +33,7 @@ Route::post('doRegister','AuthController@doRegister')->name('auth.doRegister');
 Route::get('login','AuthController@login')->name('auth.login');
 Route::post('login','AuthController@doLogin')->name('auth.do-login');
 Route::any('logout','AuthController@logout')->name('auth.logout');
+// oders
+Route::get('getOrdersSold','OrdersController@getOrdersSold')->name('orders.get');
 
 

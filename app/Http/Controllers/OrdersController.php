@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Order;
+use Illuminate\Support\Facades\Auth;
 
 class OrdersController extends Controller
 {
@@ -13,7 +15,11 @@ class OrdersController extends Controller
      */
     public function index()
     {
-        return view('splendid.orders');
+        $user = Auth::user();
+        $sellorders = Order::join('products', 'orders.id', '=', 'products.order_id')->where('seller_id', '=', $user->id)->where('status', '=', '2')->get();
+        $buyorders = Order::join('products', 'orders.id', '=', 'products.order_id')->where('buyer_id', '=', $user->id)->where('status', '=', '2')->get();
+
+        return view('splendid.active-orders', ['sell' => $sellorders, 'buy' => $buyorders]);
     }
 
     /**
@@ -80,5 +86,18 @@ class OrdersController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+
+    /**
+     * Get the orders from status = 2 'pagado' and sellerid = userid
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function getShoppingCartOrders($id)
+    {
+        $orders = Order::where('status', '=', '1')->where('seller_id', '=', $id);
+        return view('active-orders', ['sell' => $orders]);
     }
 }
