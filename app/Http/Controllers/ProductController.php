@@ -84,7 +84,8 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        return view('splendid.single-product',['product' => $product]);
+        $user = Auth::user();
+        return view('splendid.single-product',['product' => $product, 'user' => $user]);
     }
 
     /**
@@ -116,8 +117,9 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Product $product)
     {
-        //
+        $product->delete();
+        return redirect()->route('store.index');
     }
 }
