@@ -19,6 +19,7 @@ class CreateOrdersTable extends Migration
             $table->bigInteger('seller_id')->unsigned();
             $table->bigInteger('buyer_id')->unsigned();
             $table->integer('total');
+            $table->integer('status');
             $table->timestamps();
 
             $table->foreign('shoppingcarts_id')
