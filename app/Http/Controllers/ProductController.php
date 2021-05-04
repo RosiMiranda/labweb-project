@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Product;
 use App\Category;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -16,9 +17,11 @@ class ProductController extends Controller
      */
     public function index()
     {
+        $user = Auth::user();
         $products = Product::all();
+        $user_products = $products->where('user_id',$user->id);
         $categories = Category::all();
-        return view('splendid.my-products',['products' => $products,'categories' => $categories]);
+        return view('splendid.my-products',['products' => $user_products,'categories' => $categories]);
 
     }
 
