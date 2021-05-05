@@ -1,8 +1,8 @@
 @extends('layouts.main')
 
 @section('content')
-<div class="container mt-3 mb-3 align-center" style="min-height:80vh;">
-    <div class="row" style="border: 3px solid #2F6665;">
+<div class="container mt-3 mb-3 align-center" style="min-height:80vh">
+    <div class="row" style="border: 3px solid #2F6665;max-width: 600px;">
         <div class="col-12">
             <h1>Order ID: {{$order->id}}</h1>
             <div class="row">
@@ -23,7 +23,7 @@
             <div class="card mt-1 product-order">
                 <div class="row">
                     <div class="col-6">
-                        <img src="{{ url('img/ropa1.png') }}" class="" alt="..." style="width: 50%;">
+                        <img src="../uploads/products/{{$product->file_path}}" class="" alt="..." style="width: 50%;">
                     </div>
                     <div class="col-6 align-center">
                         <h3 style="margin:0;">{{$product->description }} ${{$product->price }}</h3>
