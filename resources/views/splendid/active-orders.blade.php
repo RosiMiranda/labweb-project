@@ -18,21 +18,10 @@
                         @foreach ($sell as $order)
                         <div class="col-6">
                             <div class="card card-orders text-center mt-2" style="width:100%">
-                                <div class="row">
-                                    <div class="col-4">
-                                        <img src="uploads/products/{{$order->file_path}}" class="card-img-top" alt="...">
-                                    </div>
-                                    <div class="col-8">
-                                        <div class="card-body">
-                                            <h5 style="margin:0;">ID Orden: {{$order->id}} -- Total: {{$order->total}}</h5>
-                                            <p class="card-text" style="margin:0;">{{$order->description}}</p>
-                                            <div class="row">
-                                                <button class="button ">Entregado</button>
-                                                <button class="button primary mt-2">Ver</button>
-                                            </div>
-
-                                        </div>
-                                    </div>
+                                <div class="card-body">
+                                    <h3 style="margin:0;">ID Orden: {{$order->id}} -- Total: {{$order->total}}</h3>
+                                    <button class="button ">Entregado</button>
+                                    <a href="{{ route('order.show', ['order' => $order]) }}"><button class="button primary mt-2">Ver</button></a>
                                 </div>
                             </div>
                         </div>
@@ -47,17 +36,9 @@
                         @foreach ($buy as $order)
                         <div class="col-6">
                             <div class="card card-orders-sell text-center mt-2" style="width:100%">
-                                <div class="row">
-                                    <div class="col-4">
-                                        <img src="uploads/products/{{$order->file_path}}" class="card-img-top" alt="...">
-                                    </div>
-                                    <div class="col-8">
-                                        <div class="card-body">
-                                            <h5 style="margin:0;">ID Orden: {{$order->id}} -- Total: {{$order->total}}</h5>
-                                            <p class="card-text" style="margin:0;">{{$order->description}}</p>
-                                            <button class="button primary mt-2">Ver</button>
-                                        </div>
-                                    </div>
+                                <div class="card-body">
+                                    <h3 style="margin:0;">ID Orden: {{$order->id}} -- Total: {{$order->total}}</h3>
+                                    <a href="{{ route('order.show', ['order' => $order]) }}"><button class="button primary mt-2">Ver</button></a>
                                 </div>
                             </div>
                         </div>
