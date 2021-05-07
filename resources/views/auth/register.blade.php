@@ -12,33 +12,39 @@
             <div class="col-12">
                 <form action="{{ route('auth.doRegister') }}" method="POST" class="mt-4">
                 @csrf
-                    <div class="row">
-                        <div class="col-12 col-sm-6">
+                    <div class="row justify-content-center">
+                        <div class="col-8 ">
                             <label for="">Nombre:</label>
                             <input type="text"  name="name" class="green-inputs dark-green" >
-
                         </div>
-                        <div class="col-12 col-sm-6">
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-8 ">
                             <label for="">Correo:</label>
                             <input type="email"  name="email" class="green-inputs dark-green" >
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-12 col-sm-6">
-                            <label for="">Dirección:</label><br>
+                    <div class="row justify-content-center">
+                        <div class="col-8 ">
+                            <label for="">Dirección:</label>
                             <input type="text"  name="address" class="green-inputs dark-green">
                         </div>
-                        <div class="col-12 col-sm-6">
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-8 ">
                             <label for="fname">Contraseña:</label>
                             <input type="password"  name="password" class="green-inputs dark-green">
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-12 col-sm-6">
+                    <div class="row justify-content-center">
+                        <div class="col-8 ">
                             <label for="fname">Confirmar Contraseña:</label>
                             <input type="password"  name="password_confirmation" class="green-inputs dark-green">
                         </div>
-                        <div class="col-12 col-sm-6">
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-8 ">
+                            <br>
                             <input type="submit" value="Submit" class="btn btn:hover">
                         </div>
                     </div>

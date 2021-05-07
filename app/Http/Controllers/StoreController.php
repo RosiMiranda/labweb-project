@@ -6,6 +6,7 @@ use App\Product;
 use App\Category;
 use App\ProductCategory;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class StoreController extends Controller
 {
@@ -50,7 +51,8 @@ class StoreController extends Controller
      */
     public function show(Product $product)
     {
-        return view('splendid.single-product',['product' => $product]);
+        $user = Auth::user();
+        return view('splendid.single-product',['product' => $product, 'user' => $user]);
     }
 
     /**

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Product;
 use App\Category;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -16,9 +17,11 @@ class ProductController extends Controller
      */
     public function index()
     {
+        $user = Auth::user();
         $products = Product::all();
+        $user_products = $products->where('user_id',$user->id);
         $categories = Category::all();
-        return view('splendid.my-products',['products' => $products,'categories' => $categories]);
+        return view('splendid.my-products',['products' => $user_products,'categories' => $categories]);
 
     }
 
@@ -81,7 +84,8 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        return view('splendid.single-product',['product' => $product]);
+        $user = Auth::user();
+        return view('splendid.single-product',['product' => $product, 'user' => $user]);
     }
 
     /**
@@ -113,8 +117,9 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Product $product)
     {
-        //
+        $product->delete();
+        return redirect()->route('store.index');
     }
 }
