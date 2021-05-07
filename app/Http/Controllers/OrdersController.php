@@ -44,6 +44,48 @@ class OrdersController extends Controller
         //
     }
 
+    public function addToCart($request)
+    {
+        //traer el producto
+        $product = Product::where('id', $request)->first();
+
+        $user = Auth::user();
+
+        // checar si hay carrito
+        $shoppingcart = ShoppingCart::where('user_id', $user->id)->first();
+        //si no crear uno
+        if($shoppingcart == null){
+            $shoppingcart = new ShoppingCart();
+            $shoppingcart->user_id = $user->id;
+            $shoppingcart -> save();
+        }
+
+        //checar si hay una orden con ese vendedor
+        $order = Order::where('seller_id', $product->user_id)->where('buyer_id', $user->id)->first();
+
+        //si no exite crear orden
+        if($order == null){
+            $order = new Order();
+            $order -> shoppingcarts_id = $shoppingcart->id;
+            $order -> seller_id = $product->user_id;
+            $order -> buyer_id = $user->id;
+            $order -> status = '1';
+            $order -> total = $product->price;
+        } else {
+            $order -> total += $product->price;
+        }
+
+
+        $order ->save();
+
+        //agregar el producto a la orden
+        $product->order_id = $order->id;
+        $product ->save();
+
+
+        return redirect()->route('splendid.index');
+    }
+
     /**
      * Display the specified resource.
      *
