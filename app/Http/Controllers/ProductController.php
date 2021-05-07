@@ -90,9 +90,9 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function editProduct(Product $product)
     {
-        return view('splendid.editProduct');
+        return view('splendid.editProduct',['product' => $product]);
     }
 
     /**
@@ -102,9 +102,31 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function doEditProduct(Request $request, Product $product)
     {
-        //
+        if($request->hasFile('file')){
+            $request->validate(['image' => 'mimes:jpeg,bmp,png']);
+        }
+
+        $user = Auth::user();
+        $file = $request->file('image');
+        $filename = $request->file->hashName();
+        $request->file->move('uploads/products/', $filename);
+
+
+
+
+        $arr = $request->input();
+        $product -> description = $arr['description'];
+        $product -> user_id = $user -> id ;
+        $product -> price = $arr['price'];
+        $product -> size = $arr['size'];
+        $product -> file_path = $filename;
+
+        $product -> save();
+
+        return redirect()->route('splendid.index');
+
     }
 
     /**

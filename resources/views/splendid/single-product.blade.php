@@ -7,7 +7,7 @@
         <div class="col-12 col-sm-6 col-product-info">
            
             <h1>{{$product->description}}
-                <a  href="url ">
+                <a  href="{{ route('splendid.editProduct', ['product' => $product]) }}">
                     <img class="editProduct " src="{{ url('img/edit.png') }}" alt="..." >
                 </a>
             </h1>
