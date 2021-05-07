@@ -7,9 +7,11 @@
         <div class="col-12 col-sm-6 col-product-info">
 
             <h1>{{$product->description}}
-                <a  href="{{ route('splendid.editProduct', ['product' => $product]) }}">
-                    <img class="editProduct " src="{{ url('img/edit.png') }}" alt="..." >
-                </a>
+                @if ($user->id == $product->user_id)
+                    <a  href="{{ route('splendid.editProduct', ['product' => $product]) }}">
+                        <img class="editProduct " src="{{ url('img/edit.png') }}" alt="..." >
+                    </a>
+                @endif
             </h1>
             <h2>${{$product->price}}</h2>
             <h3>Talla: {{$product->size}}</h3>
@@ -20,7 +22,6 @@
             @endforeach
             </div>
             @if ($user->id == $product->user_id)
-                <button class="button primary mt-3">Editar</button>
                 <form action="{{route('product.destroy',['product' => $product]) }}" method="POST">
                     @csrf
                     @method('DELETE')
