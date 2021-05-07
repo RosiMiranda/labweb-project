@@ -59,12 +59,12 @@ class AuthController extends Controller
         return view('auth.edit');
     }
 
-    public function doEdit(){
+    public function doEdit(Request $req){
         $user = Auth::user();
-        $user->name = Request::input('name');
-        $user->email = Request::input('email');
-        $user->password = Request::input('password');
-        $user->address = Request::input('address');
+        $user->name = $req->name;
+        $user->email = $req->email;
+        $user->password = $req->password;
+        $user->address = $req->address;
         $user->save();
         return redirect()->route('user.profile');
     }
