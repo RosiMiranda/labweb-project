@@ -35,6 +35,7 @@ Route::get('register','AuthController@register')->name('auth.register');
 Route::get('profile','AuthController@getProfile')->name('user.profile')->middleware('user_auth');;
 Route::get('edit','AuthController@edit')->name('auth.edit');
 Route::post('doEdit','AuthController@doEdit')->name('auth.doEdit');
+Route::delete('products/{product}','ProductController@destroy')->name('product.destroy');
 Route::get('mycart','ShoppingCartController@getCart')->name('user.cart')->middleware('user_auth');;
 Route::post('doRegister','AuthController@doRegister')->name('auth.doRegister');
 Route::get('login','AuthController@login')->name('auth.login');
