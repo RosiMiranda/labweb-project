@@ -18,8 +18,8 @@ class OrdersController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $sellorders = Order::join('products', 'orders.id', '=', 'products.order_id')->where('seller_id', '=', $user->id)->where('status', '=', '2')->get();
-        $buyorders = Order::join('products', 'orders.id', '=', 'products.order_id')->where('buyer_id', '=', $user->id)->where('status', '=', '2')->get();
+        $sellorders = Order::where('seller_id', '=', $user->id)->where('status', '=', '2')->get();
+        $buyorders = Order::where('buyer_id', '=', $user->id)->where('status', '=', '2')->get();
         return view('splendid.active-orders', ['sell' => $sellorders, 'buy' => $buyorders]);
     }
 
