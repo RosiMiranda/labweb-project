@@ -125,7 +125,7 @@ a, a:hover{
 .imageUser{
     width: 55%;
     height: 85%;
-    
+
 }
 
 .edit{
@@ -151,7 +151,7 @@ a, a:hover{
     border-radius: 0.375em;
     padding: 0em;
     font-size: 20px;
-    background-color: rgb(199,87,132, 0.8);
+    background-color: rgb(199,87,132);
     position: absolute;
     bottom: 0%;
     left: 0%;

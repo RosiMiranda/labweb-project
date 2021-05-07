@@ -49,14 +49,14 @@ class OrdersController extends Controller
     {
         $user = Auth::user();
 
-        $order = Order::where('id', '=', $id)->get();
+        $order = Order::where('id', '=', $id)->first();
         $order -> status = "4";
-        
+
         $order ->save();
 
-        $product = Product::where('order_id', $id)->get();
-        $product->order_id = "";
-        
+        $product = Product::where('order_id', $id)->first();
+        $product->order_id = null ;
+
         $product ->save();
 
         return redirect()->route('splendid.index');
