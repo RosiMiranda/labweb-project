@@ -7,6 +7,7 @@ use App\Order;
 use Illuminate\Support\Facades\Auth;
 use App\Product;
 use App\User;
+use App\ShoppingCart;
 
 class OrdersController extends Controller
 {

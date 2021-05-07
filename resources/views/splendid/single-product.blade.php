@@ -28,7 +28,7 @@
                     {{-- <button type="submit" class="button primary mt-3">Borrar</button>                --}}
                 </form>
             @else
-                <button class="button primary mt-3">Agregar al carrito</button>
+                <a href=" {{ url('add-to-cart/'.$product->id) }}"><button class="button primary mt-3">Agregar al carrito</button></a>
             @endif
         </div>
         <div class="col-12 col-sm-6  col-product-info">
