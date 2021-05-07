@@ -92,7 +92,7 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        return view('splendid.edit-product');
+        return view('splendid.editProduct');
     }
 
     /**
