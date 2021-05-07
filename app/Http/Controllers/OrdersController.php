@@ -46,28 +46,29 @@ class OrdersController extends Controller
         $user = Auth::user();
         $arr = $request->input();
         $products = $arr['products'];
-        $product_user = $products[0]->user_id;
+
+
         $sum = 0;
         $products_id =array();
         foreach($products as $p){
             $sum = $sum + $p->price;
             $products_id[]=$p->id;
         }
-        
 
+        $product_user = $products[0]->user_id;
         $order = new Order();
         $order -> shopingcarts_id = $arr['shopingcarts_id'];
         $order -> status = '1';
         $order -> total = $sum;
-        $order -> buyer_id = $user
-        $order -> seller_id = $product_user
+        $order -> buyer_id = $user;
+        $order -> seller_id = $product_user;
 
         $order -> save();
 
         foreach($products as $p){
-            Product::where('id',$p)->update['order_id',$order->id];
+            Product::where('id',$p)->update(['order_id',$order->id]);
         }
-        
+
         return redirect()->route('splendid.index');
     }
 
@@ -119,21 +120,21 @@ class OrdersController extends Controller
             $sum = $sum + $p->price;
             $products_id[]=$p->id;
         }
-        
 
-        $order = Order::where('id',$id)
+
+        $order = Order::where('id',$id);
         $order -> shopingcarts_id = $arr['shopingcarts_id'];
         $order -> status = $arr['status'];
         $order -> total = $sum;
-        $order -> buyer_id = $user
-        $order -> seller_id = $product_user
+        $order -> buyer_id = $user;
+        $order -> seller_id = $product_user;
 
         $order -> save();
 
         foreach($products as $p){
-            Product::where('id',$p)->update['order_id',$order->id];
+            Product::where('id',$p)->update(['order_id',$order->id]);
         }
-        
+
         return redirect()->route('splendid.index');
     }
 
@@ -157,21 +158,21 @@ class OrdersController extends Controller
             $sum = $sum + $p->price;
             $products_id[]=$p->id;
         }
-        
 
-        $order = Order::where('id',$id)
+
+        $order = Order::where('id',$id);
         $order -> shopingcarts_id = $arr['shopingcarts_id'];
         $order -> status = '4';
         $order -> total = $sum;
-        $order -> buyer_id = $user
-        $order -> seller_id = $product_user
+        $order -> buyer_id = $user;
+        $order -> seller_id = $product_user;
 
         $order -> save();
 
         foreach($products as $p){
-            Product::where('id',$p)->update['order_id',""];
+            Product::where('id',$p)->update(['order_id',""]);
         }
-        
+
         return redirect()->route('splendid.index');
     }
 

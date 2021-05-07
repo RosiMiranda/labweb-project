@@ -106,14 +106,13 @@ class ProductController extends Controller
     {
         if($request->hasFile('file')){
             $request->validate(['image' => 'mimes:jpeg,bmp,png']);
+            $file = $request->file('image');
+            $filename = $request->file->hashName();
+            $request->file->move('uploads/products/', $filename);
+            $product -> file_path = $filename;
         }
 
         $user = Auth::user();
-        $file = $request->file('image');
-        $filename = $request->file->hashName();
-        $request->file->move('uploads/products/', $filename);
-
-
 
 
         $arr = $request->input();
@@ -121,7 +120,7 @@ class ProductController extends Controller
         $product -> user_id = $user -> id ;
         $product -> price = $arr['price'];
         $product -> size = $arr['size'];
-        $product -> file_path = $filename;
+
 
         $product -> save();
 
