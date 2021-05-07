@@ -195,6 +195,12 @@ a, a:hover{
     width: 100%;
 }
 
+.editProduct{
+    width:7%;
+    height:7%;
+
+}
+
 /* for miages in home */
 .home-imgs-one{
     background-image:url('../../img/ropa1.png');
