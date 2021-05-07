@@ -17,7 +17,7 @@ class StoreController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
+        $products = Product::where('order_id', null)->get();
         $categories = Category::all();
         return view('splendid.store-products',['products' => $products,'categories' => $categories]);
     }
