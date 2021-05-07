@@ -44,3 +44,4 @@ Route::any('logout','AuthController@logout')->name('auth.logout');
 // oders
 Route::get('getOrdersSold','OrdersController@getOrdersSold')->name('orders.get');
 Route::get('add-to-cart/{id}', 'OrdersController@addToCart');
+Route::get('cancel-order/{id}', 'OrdersController@cancelOrder');

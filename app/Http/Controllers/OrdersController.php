@@ -45,6 +45,24 @@ class OrdersController extends Controller
         //
     }
 
+    public function cancelOrder($id)
+    {
+        $user = Auth::user();
+
+        $order = Order::where('id', '=', $id)->get();
+        $order -> status = "4";
+        
+        $order ->save();
+
+        $product = Product::where('order_id', $id)->get();
+        $product->order_id = "";
+        
+        $product ->save();
+
+        return redirect()->route('splendid.index');
+
+    }
+
     public function addToCart($request)
     {
         //traer el producto
