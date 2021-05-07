@@ -3,10 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Order;
-use Illuminate\Support\Facades\Auth;
-use App\Product;
-use App\User;
 
 class OrdersController extends Controller
 {
@@ -17,10 +13,7 @@ class OrdersController extends Controller
      */
     public function index()
     {
-        $user = Auth::user();
-        $sellorders = Order::join('products', 'orders.id', '=', 'products.order_id')->where('seller_id', '=', $user->id)->where('status', '=', '2')->get();
-        $buyorders = Order::join('products', 'orders.id', '=', 'products.order_id')->where('buyer_id', '=', $user->id)->where('status', '=', '2')->get();
-        return view('splendid.active-orders', ['sell' => $sellorders, 'buy' => $buyorders]);
+        return view('splendid.orders');
     }
 
     /**
@@ -50,15 +43,9 @@ class OrdersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Order $order)
+    public function show($id)
     {
-        $products = Product::where('order_id', '=', $order->id)->get();
-        $seller = User::where('id', $order->seller_id)->first();
-        $buyer = User::where('id', $order->buyer_id)->first();
-
-
-
-        return view('splendid.show-order',['order' => $order, 'products' => $products, 'seller' => $seller, 'buyer' => $buyer]);
+        //
     }
 
     /**
@@ -93,6 +80,7 @@ class OrdersController extends Controller
     public function destroy($id)
     {
         //
+<<<<<<< HEAD
     }
 
 
@@ -106,5 +94,7 @@ class OrdersController extends Controller
     {
         $orders = Order::where('status', '=', '1')->where('seller_id', '=', $id);
         return view('active-orders', ['sell' => $orders]);
+=======
+>>>>>>> parent of 7d5ca85... Merge pull request #1 from RosiMiranda/orders-view
     }
 }

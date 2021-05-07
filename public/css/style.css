@@ -244,23 +244,3 @@ a, a:hover{
     left: 0%;
     top: 0%;
 }
-
-.card-orders{
-    border: 3px solid #2F6665;
-    text-align: initial !important;
-}
-
-.card-orders-sell{
-    border:3px solid #79B6B6;
-    text-align: initial !important;
-}
-.card-shoppnig{
-    border: 3px solid rgb(199,87,132);
-    text-align: initial !important;
-}
-
-.product-order{
-    background-color: transparent;
-    border: 0px;
-    border-bottom:3px solid #2F6665;
-}
