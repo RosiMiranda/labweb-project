@@ -122,6 +122,20 @@ a, a:hover{
     background-image: url('../../img/woman.png');
     background-size:    35px 25px;
 }
+.imageUser{
+    width: 55%;
+    height: 85%;
+    
+}
+
+.edit{
+    width: 4%;
+    height: 4%;
+}
+
+.info{
+    width: 50%;
+}
 /* all for card products */
 .card-store{
     margin: 0 auto;

@@ -3,11 +3,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+
 use App\User;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use Request;
 
 class AuthController extends Controller
 {
@@ -33,6 +34,21 @@ class AuthController extends Controller
 
     public function login (Request $req){
         return view('auth.login');
+    }
+
+    public function edit (Request $req){
+
+        return view('auth.edit');
+    }
+
+    public function doEdit(){
+        $user = Auth::user();
+        $user->name = Request::input('name');
+        $user->email = Request::input('email');
+        $user->password = Request::input('password');
+        $user->address = Request::input('address');
+        $user->save();
+        return redirect()->route('user.profile');
     }
 
     public function doLogin(Request $req){

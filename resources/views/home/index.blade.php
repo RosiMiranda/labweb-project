@@ -16,7 +16,7 @@
                 <section id="banner">
                     <div class="content">
                         <header>
-                            <h1>Hola,<br />
+                            <h1>Hola,<br/>
                             soy Splendid</h1>
 
                         </header>
