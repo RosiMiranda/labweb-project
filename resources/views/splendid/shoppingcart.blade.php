@@ -17,7 +17,7 @@
                         <div class="card-body">
                             <h3 style="margin:0;">ID Orden: {{$order->id}} </h3>
                             <h3 style="margin:0;"> Total: {{$order->total}}</h3>
-                            <button class="button mt-2">Cancelar</button>
+                            <a href="{{ route('order.cancelOrder', ['order' => $order]) }}"><button class="button mt-2">Cancelar</button></a>
                             <a href="{{ route('order.show', ['order' => $order]) }}"><button class="button primary mt-2">Ver</button></a>
                             <button class="button primary mt-2">Pagar</button>
 
