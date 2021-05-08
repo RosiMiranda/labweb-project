@@ -28,4 +28,11 @@
         </div>
     </div>
 </div>
+<script src="{{ asset('js/app.js') }}"></script>
+<script>
+    Echo.channel('producto').listen('ProductoEvent', (e) => {
+        // DELETE PRUDCTO DE VISTA
+        document.getElementById(e.product.file_path).remove();
+    })
+</script>
 @endsection
