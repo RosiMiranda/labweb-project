@@ -33,8 +33,6 @@
     Echo.channel('producto').listen('ProductoEvent', (e) => {
         // DELETE PRUDCTO DE VISTA
         document.getElementById(e.product.file_path).remove();
-
-
     })
 </script>
 @endsection
