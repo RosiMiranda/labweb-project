@@ -173,4 +173,16 @@ class OrdersController extends Controller
         $orders = Order::where('status', '=', '1')->where('seller_id', '=', $id);
         return view('active-orders', ['sell' => $orders]);
     }
+
+
+    public function sendOrders()
+    {
+        // $orders = Order::where('status', '=', '1')->where('seller_id', '=', $id);
+        // return view('active-orders', ['sell' => $orders]);
+
+        return view('splendid.pastOrders');
+    }
+
+        
+    
 }

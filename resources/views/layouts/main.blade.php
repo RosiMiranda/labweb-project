@@ -32,7 +32,7 @@
                         <li><a class="dropdown-item" href="{{ route('user.profile')}}">My Profile</a></li>
                         <li><a class="dropdown-item" href="{{ route('splendid.index')}}">My Products</a></li>
                         <li><a class="dropdown-item" href="{{ route('order.index')}}">Active Orders</a></li>
-                        <li><a class="dropdown-item" href="{{ route('order.index')}}">Past Orders</a></li>
+                        <li><a class="dropdown-item" href="{{ route('splendid.pastOrders')}}">Past Orders</a></li>
                         <li><a class="dropdown-item" href="{{ route('auth.logout')}}">Log out</a></li>
                     </ul>
                 </li>
