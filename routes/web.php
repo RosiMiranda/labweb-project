@@ -27,6 +27,7 @@ Route::resource('order', 'OrdersController')->middleware('user_auth');
 Route::get('products/{product}','StoreController@show')->name('product.show');
 Route::get('my_products/{product}','ProductController@show')->name('my_product.show');
 
+Route::get('pastOrders','OrdersController@sendOrders')->name('splendid.pastOrders');
 
 Route::get('editProduct/{product}','ProductController@editProduct')->name('splendid.editProduct');
 Route::post('doEditProduct/{product}','ProductController@doEditProduct')->name('splendid.doEditProduct');
@@ -39,7 +40,9 @@ Route::delete('products/{product}','ProductController@destroy')->name('product.d
 Route::get('mycart','ShoppingCartController@getCart')->name('user.cart')->middleware('user_auth');;
 Route::post('doRegister','AuthController@doRegister')->name('auth.doRegister');
 Route::get('login','AuthController@login')->name('auth.login');
+
 Route::post('login','AuthController@doLogin')->name('auth.do-login');
 Route::any('logout','AuthController@logout')->name('auth.logout');
 // oders
 Route::get('getOrdersSold','OrdersController@getOrdersSold')->name('orders.get');
+
