@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Product;
 use App\User;
 use App\ShoppingCart;
+use App\Events\ProductoEvent;
 
 class OrdersController extends Controller
 {
@@ -54,12 +55,14 @@ class OrdersController extends Controller
 
         $order ->save();
 
-        $product = Product::where('order_id', $id)->first();
-        $product->order_id = null ;
+        //hacer for each product
+        $products = Product::where('order_id', $id)->get();
+        foreach($products as $p){
+            $p ->order_id = null ;
+            $p ->save();
+        }
 
-        $product ->save();
-
-        return redirect()->route('splendid.index');
+        return redirect()->route('store.index');
 
     }
 
@@ -83,7 +86,7 @@ class OrdersController extends Controller
         $order = Order::where('seller_id', $product->user_id)->where('buyer_id', $user->id)->first();
 
         //si no exite crear orden
-        if($order == null){
+        if($order == null || $order->status != 1){
             $order = new Order();
             $order -> shoppingcarts_id = $shoppingcart->id;
             $order -> seller_id = $product->user_id;
@@ -101,8 +104,10 @@ class OrdersController extends Controller
         $product->order_id = $order->id;
         $product ->save();
 
+        event(new ProductoEvent( $product));
 
-        return redirect()->route('splendid.index');
+
+        return redirect()->route('user.cart');
     }
 
     /**
