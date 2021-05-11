@@ -60,9 +60,10 @@ class OrdersController extends Controller
         foreach($products as $p){
             $p ->order_id = null ;
             $p ->save();
+            event(new ProductoEvent( $p));
         }
 
-        return redirect()->route('store.index');
+        return redirect()->route('user.cart');
 
     }
 
@@ -83,10 +84,10 @@ class OrdersController extends Controller
         }
 
         //checar si hay una orden con ese vendedor
-        $order = Order::where('seller_id', $product->user_id)->where('buyer_id', $user->id)->first();
+        $order = Order::where('seller_id', $product->user_id)->where('buyer_id', $user->id)->where('status', 1)->first();
 
         //si no exite crear orden
-        if($order == null || $order->status != 1){
+        if($order == null){
             $order = new Order();
             $order -> shoppingcarts_id = $shoppingcart->id;
             $order -> seller_id = $product->user_id;
@@ -105,8 +106,6 @@ class OrdersController extends Controller
         $product ->save();
 
         event(new ProductoEvent( $product));
-
-
         return redirect()->route('user.cart');
     }
 
@@ -173,16 +172,4 @@ class OrdersController extends Controller
         $orders = Order::where('status', '=', '1')->where('seller_id', '=', $id);
         return view('active-orders', ['sell' => $orders]);
     }
-
-
-    public function sendOrders()
-    {
-        // $orders = Order::where('status', '=', '1')->where('seller_id', '=', $id);
-        // return view('active-orders', ['sell' => $orders]);
-
-        return view('splendid.pastOrders');
-    }
-
-        
-    
 }
