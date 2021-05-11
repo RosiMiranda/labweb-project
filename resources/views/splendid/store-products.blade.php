@@ -31,18 +31,19 @@
 <script src="{{ asset('js/app.js') }}"></script>
 <script>
     Echo.channel('producto').listen('ProductoEvent', (e) => {
-        console.log(e)
-        // DELETE PRUDCTO DE VISTA
         //adding
         if(e.product.order_id == null){
-            consoloe.log('agregar');
-            $('.store').append
-            ('<a href="{{ route("product.show", ["product" =>' + e.product.id + ']) }}>' +
-                '<div class="col text-center" id="' + e.product.file_path + '"><div class="card card-store text-center text-white" style="width:18rem;">' +
-                '<img src="uploads/products/' + e.product.file_path + '" class="card-img-top" alt="...">' +
-                '<div class="card-body"><h5 class="card-title">'+ e.product.description +'</h5> <p class="card-text">$'+ e.product.price +'</p></div>' +
-                '</div> </div>'
-            '</a>');
+            const component = '<a href="{{ route("product.show", ["product" =>' + e.product.id + ']) }}>' +
+            '<div class="col text-center" id="' + e.product.file_path + '">' +
+            '<div class="card card-store text-center text-white" style="width: 18rem;">' +
+            '<img src="uploads/products/'+ e.product.file_path  +'" class="card-img-top" alt="...">' +
+            '<div class="card-body">' +
+            '<h5 class="card-title">'+ e.product.description +'</h5>' +
+            '<p class="card-text">$'+ e.product.price  +'</p></div>' +
+            +'</div>'
+            + '</div>'
+            + '</a>'
+            $('.store').append(component);
         } else {
             //removing
             document.getElementById(e.product.file_path).remove();
