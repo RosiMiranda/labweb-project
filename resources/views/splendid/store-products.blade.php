@@ -31,6 +31,7 @@
 <script src="{{ asset('js/app.js') }}"></script>
 <script>
     Echo.channel('producto').listen('ProductoEvent', (e) => {
+        console.log(e)
         // DELETE PRUDCTO DE VISTA
         document.getElementById(e.product.file_path).remove();
     })
