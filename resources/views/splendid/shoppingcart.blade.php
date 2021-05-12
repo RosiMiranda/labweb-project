@@ -19,8 +19,7 @@
                             <h3 style="margin:0;"> Total: {{$order->total}}</h3>
                             <a href="{{ url('cancel-order/'.$order->id) }}"><button class="button mt-2">Cancelar</button></a>
                             <a href="{{ route('order.show', ['order' => $order]) }}"><button class="button primary mt-2">Ver</button></a>
-                            <button class="button primary mt-2">Pagar</button>
-
+                            <a href="{{ url('order-purchase/'.$order->id)}}"><button class="button primary mt-2">Pagar</button></a>
                         </div>
                     </div>
                 </div>

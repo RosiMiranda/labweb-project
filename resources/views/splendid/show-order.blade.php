@@ -6,16 +6,7 @@
         <div class="col-12">
             <h1>Order ID: {{$order->id}}</h1>
             <div class="row">
-                <div class="col-6">
-                    <h3 style="margin:0;">Buyer</h3>
-                    <p style="margin:0;">{{$buyer->name}}</p>
-                    <p style="margin:0;">{{$buyer->address}}</p>
-                </div>
-                <div class="col-6">
-                    <h3 style="margin:0;">Seller</h3>
-                    <p style="margin:0;">{{$seller->name}}</p>
-                    <p style="margin:0;">{{$seller->address}}</p>
-                </div>
+
             </div>
         </div>
         <div class="col-12 mt-5 mb-3" style="padding:0;">

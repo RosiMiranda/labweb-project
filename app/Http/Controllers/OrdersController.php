@@ -121,9 +121,23 @@ class OrdersController extends Controller
         $seller = User::where('id', $order->seller_id)->first();
         $buyer = User::where('id', $order->buyer_id)->first();
 
-
-
         return view('splendid.show-order',['order' => $order, 'products' => $products, 'seller' => $seller, 'buyer' => $buyer]);
+    }
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function showPayment($id)
+    {
+        $order = Order::where('id', '=', $id)->first();
+        $products = Product::where('order_id', '=', $order->id)->get();
+        $seller = User::where('id', $order->seller_id)->first();
+        $buyer = User::where('id', $order->buyer_id)->first();
+
+        $intent = auth()->user()->createSetupIntent();
+        return view('splendid.payment',['order' => $order, 'products' => $products, 'seller' => $seller, 'buyer' => $buyer, 'intent' => $intent]);
     }
 
     /**
@@ -171,5 +185,32 @@ class OrdersController extends Controller
     {
         $orders = Order::where('status', '=', '1')->where('seller_id', '=', $id);
         return view('active-orders', ['sell' => $orders]);
+    }
+
+    /**
+     * Pay order
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+
+    public function purchase(Request $request, Order $order){
+
+        $order = Order::where('id', '=', $request->order )->first();
+        $user = $request->user();
+        $paymentMethod = $request->input('payment_method');
+
+        try {
+            $user->createOrGetStripeCustomer();
+            $user->updateDefaultPaymentMethod($paymentMethod);
+            $user->charge($order->total * 100, $paymentMethod);
+
+            $order->status = 2;
+            $order->save();
+        } catch (\Exception $exception) {
+            return back()->with('error', $exception->getMessage());
+        }
+
+        return redirect()->route('order.index');
     }
 }
