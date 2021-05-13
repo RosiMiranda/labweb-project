@@ -19,7 +19,8 @@
                         <div class="col-6">
                             <div class="card card-orders text-center mt-2" style="width:100%">
                                 <div class="card-body">
-                                    <h3 style="margin:0;">ID Orden: {{$order->id}} -- Total: {{$order->total}}</h3>
+                                    <h3 style="margin:0;">Id Orden: {{$order->id}}</h3>
+                                    <h4 style="margin:0;"> Total: ${{$order->total}}mxn</h4>
                                     <button class="button ">Entregado</button>
                                     <a href="{{ route('order.show', ['order' => $order]) }}"><button class="button primary mt-2">Ver</button></a>
                                 </div>
@@ -37,7 +38,8 @@
                         <div class="col-6">
                             <div class="card card-orders-sell text-center mt-2" style="width:100%">
                                 <div class="card-body">
-                                    <h3 style="margin:0;">ID Orden: {{$order->id}} -- Total: {{$order->total}}</h3>
+                                    <h3 style="margin:0;">Id Orden: {{$order->id}}</h3>
+                                    <h4 style="margin:0;"> Total: ${{$order->total}}mxn</h4>
                                     <a href="{{ route('order.show', ['order' => $order]) }}"><button class="button primary mt-2">Ver</button></a>
                                 </div>
                             </div>

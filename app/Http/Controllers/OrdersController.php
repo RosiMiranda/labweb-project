@@ -195,10 +195,31 @@ class OrdersController extends Controller
      */
 
     public function purchase(Request $request, Order $order){
+        \Stripe\Stripe::setApiKey('sk_test_51Iq712Ggc8uTYvfRbNzgmZIZGJqWnEIMNPYRLs8dMqFudC114O1U6FgcBauTfwIsRnSlY7SQQOt2YHaNHIzMpKre00RF6i4am3');
 
         $order = Order::where('id', '=', $request->order )->first();
         $user = $request->user();
         $paymentMethod = $request->input('payment_method');
+
+
+
+        // create express account
+        $account = \Stripe\Account::create([
+            'country' => 'MX',
+            'type' => 'express',
+        ]);
+
+        dd($account);
+
+        $payment_intent = \Stripe\PaymentIntent::create([
+            'payment_method_types' => ['card'],
+            'amount' => 1000,
+            'currency' => 'mxn',
+            'application_fee_amount' => 123,
+            'transfer_data' => [
+                'destination' => '{{CONNECTED_STRIPE_ACCOUNT_ID}}',
+            ],
+        ]);
 
         try {
             $user->createOrGetStripeCustomer();
