@@ -28,9 +28,11 @@ class AuthController extends Controller
         $data['password'] = Hash::make($data['password']);
         $user = User::create($data);
 
+        $stripe = new \Stripe\StripeClient(env('STRIPE_SECRET'));
+
         // create stripe accoun
-        $stripe->accounts->create([
-            'type' => 'individual',
+        $account = $stripe->accounts->create([
+            'type' => 'custom',
             'country' => 'MX',
             'email' =>  $user->email,
             'capabilities' => [
@@ -38,7 +40,10 @@ class AuthController extends Controller
                 'transfers' => ['requested' => true],
             ],
         ]);
-        $user->stipe_acc = $stripe->id;
+
+
+        $user->stripe_acc = $account->id;
+        $user->save();
 
         return redirect()->route('auth.login');
     }

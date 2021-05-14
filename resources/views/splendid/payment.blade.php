@@ -39,20 +39,20 @@
         </div>
         <div class="col-6">
             <div class="card">
-            <form method="POST" action="{{ route('purchase', ['order'=>$order->id]) }}" class="card-form mt-3 mb-3" >
-                @csrf
-                <input type="hidden" name="payment_method" class="payment-method">
-                <input class="StripeElement mb-3" name="card_holder_name" placeholder="Card holder name" required>
-                <div class="col">
-                    <div id="card-element"></div>
-                </div>
-                <div id="card-errors" role="alert"></div>
-                <div class="form-group mt-3">
-                    <button type="submit" class="button primary pay">
-                        Purchase
-                    </button>
-                </div>
-            </form>
+                <form method="POST" action="{{ route('purchase', ['order'=>$order->id]) }}" class="card-form mt-3 mb-3" >
+                    @csrf
+                    <input type="hidden" name="payment_method" class="payment-method">
+                    <input class="StripeElement mb-3" name="card_holder_name" placeholder="Card holder name" required>
+                    <div class="col">
+                        <div id="card-element"></div>
+                    </div>
+                    <div id="card-errors" role="alert"></div>
+                    <div class="form-group mt-3">
+                        <button type="submit" class="button primary pay">
+                            Purchase
+                        </button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -107,7 +107,6 @@
         })
         return false
     })
-
 </script>
 
 @endsection

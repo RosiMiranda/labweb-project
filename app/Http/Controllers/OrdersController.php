@@ -195,36 +195,35 @@ class OrdersController extends Controller
      */
 
     public function purchase(Request $request, Order $order){
-        \Stripe\Stripe::setApiKey('sk_test_51Iq712Ggc8uTYvfRbNzgmZIZGJqWnEIMNPYRLs8dMqFudC114O1U6FgcBauTfwIsRnSlY7SQQOt2YHaNHIzMpKre00RF6i4am3');
+        \Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
+        $stripe = new \Stripe\StripeClient(env('STRIPE_SECRET'));
 
         $order = Order::where('id', '=', $request->order )->first();
         $user = $request->user();
         $paymentMethod = $request->input('payment_method');
 
+        $seller = User::where('id', '=', $order->seller_id);
 
+        $stripe->paymentMethods->attach(
+            $paymentMethod,
+            ['customer' => $user->stripe_id]
+        );
 
-        // create express account
-        $account = \Stripe\Account::create([
-            'country' => 'MX',
-            'type' => 'express',
-        ]);
-
-        dd($account);
-
-        $payment_intent = \Stripe\PaymentIntent::create([
-            'payment_method_types' => ['card'],
-            'amount' => 1000,
-            'currency' => 'mxn',
-            'application_fee_amount' => 123,
-            'transfer_data' => [
-                'destination' => '{{CONNECTED_STRIPE_ACCOUNT_ID}}',
-            ],
-        ]);
-
+        // destination has to be the same -> stripe just gave us one fake account
+        //in production should be the account of the seller user
         try {
-            $user->createOrGetStripeCustomer();
-            $user->updateDefaultPaymentMethod($paymentMethod);
-            $user->charge($order->total * 100, $paymentMethod);
+            $payment_intent = \Stripe\PaymentIntent::create([
+            'payment_method_types' => ['card'],
+            'amount' => $order->total * 100,
+            'currency' => 'mxn',
+            'application_fee_amount' => 120,
+            'transfer_data' => [
+                'destination' => 'acct_1IqoL72eWkNQ5tFW',
+            ],
+            'customer' =>  $user->stripe_id,
+            'payment_method' => $paymentMethod,
+            'confirm'=> true,
+            ]);
 
             $order->status = 2;
             $order->save();
