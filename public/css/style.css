@@ -253,12 +253,12 @@ a, a:hover{
 }
 
 .card-orders{
-    border: 3px solid #2F6665;
+    border: 1px solid #2F6665;
     text-align: initial !important;
 }
 
 .card-orders-sell{
-    border:3px solid #79B6B6;
+    border:2px solid #79B6B6;
     text-align: initial !important;
 }
 .card-shoppnig{
@@ -269,5 +269,28 @@ a, a:hover{
 .product-order{
     background-color: transparent;
     border: 0px;
-    border-bottom:3px solid #2F6665;
+    border-radius: 0%;
+    border-bottom:1px solid #2F6665;
+}
+
+/* stripe */
+.StripeElement {
+    box-sizing: border-box;
+    height: 40px;
+    padding: 10px 12px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background-color: white;
+    box-shadow: 0 1px 3px 0 #e6ebf1;
+    -webkit-transition: box-shadow 150ms ease;
+    transition: box-shadow 150ms ease;
+}
+.StripeElement--focus {
+    box-shadow: 0 1px 3px 0 #cfd7df;
+}
+.StripeElement--invalid {
+    border-color: #fa755a;
+}
+.StripeElement--webkit-autofill {
+    background-color: #fefde5 !important;
 }

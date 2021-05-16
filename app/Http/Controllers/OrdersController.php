@@ -121,9 +121,23 @@ class OrdersController extends Controller
         $seller = User::where('id', $order->seller_id)->first();
         $buyer = User::where('id', $order->buyer_id)->first();
 
-
-
         return view('splendid.show-order',['order' => $order, 'products' => $products, 'seller' => $seller, 'buyer' => $buyer]);
+    }
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function showPayment($id)
+    {
+        $order = Order::where('id', '=', $id)->first();
+        $products = Product::where('order_id', '=', $order->id)->get();
+        $seller = User::where('id', $order->seller_id)->first();
+        $buyer = User::where('id', $order->buyer_id)->first();
+
+        $intent = auth()->user()->createSetupIntent();
+        return view('splendid.payment',['order' => $order, 'products' => $products, 'seller' => $seller, 'buyer' => $buyer, 'intent' => $intent]);
     }
 
     /**
@@ -171,5 +185,57 @@ class OrdersController extends Controller
     {
         $orders = Order::where('status', '=', '1')->where('seller_id', '=', $id);
         return view('active-orders', ['sell' => $orders]);
+    }
+
+    /**
+     * Pay order
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+
+    public function purchase(Request $request, Order $order){
+        \Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
+        $stripe = new \Stripe\StripeClient(env('STRIPE_SECRET'));
+
+        $order = Order::where('id', '=', $request->order )->first();
+        $paymentMethod = $request->input('payment_method');
+
+
+        $user = $request->user();
+        $user->createOrGetStripeCustomer();
+        $user->updateDefaultPaymentMethod($paymentMethod);
+
+
+        $seller = User::where('id', '=', $order->seller_id);
+
+        $stripe->paymentMethods->attach(
+            $paymentMethod,
+            ['customer' => $user->stripe_id]
+        );
+
+        // destination has to be the same -> stripe just gave us one fake account
+        //in production should be the account of the seller user
+        try {
+            $payment_intent = \Stripe\PaymentIntent::create([
+            'payment_method_types' => ['card'],
+            'amount' => $order->total * 100,
+            'currency' => 'mxn',
+            'application_fee_amount' => 120,
+            'transfer_data' => [
+                'destination' => 'acct_1IqoL72eWkNQ5tFW',
+            ],
+            'customer' =>  $user->stripe_id,
+            'payment_method' => $paymentMethod,
+            'confirm'=> true,
+            ]);
+
+            $order->status = 2;
+            $order->save();
+        } catch (\Exception $exception) {
+            return back()->with('error', $exception->getMessage());
+        }
+
+        return redirect()->route('order.index');
     }
 }

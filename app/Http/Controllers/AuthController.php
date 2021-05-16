@@ -26,7 +26,24 @@ class AuthController extends Controller
         ])->validate();
 
         $data['password'] = Hash::make($data['password']);
-        User::create($data);
+        $user = User::create($data);
+
+        $stripe = new \Stripe\StripeClient(env('STRIPE_SECRET'));
+
+        // create stripe accoun
+        $account = $stripe->accounts->create([
+            'type' => 'custom',
+            'country' => 'MX',
+            'email' =>  $user->email,
+            'capabilities' => [
+                'card_payments' => ['requested' => true],
+                'transfers' => ['requested' => true],
+            ],
+        ]);
+
+
+        $user->stripe_acc = $account->id;
+        $user->save();
 
         return redirect()->route('auth.login');
     }
