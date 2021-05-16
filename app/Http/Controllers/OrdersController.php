@@ -214,8 +214,6 @@ class OrdersController extends Controller
             ['customer' => $user->stripe_id]
         );
 
-
-
         // destination has to be the same -> stripe just gave us one fake account
         //in production should be the account of the seller user
         try {
