@@ -199,8 +199,13 @@ class OrdersController extends Controller
         $stripe = new \Stripe\StripeClient(env('STRIPE_SECRET'));
 
         $order = Order::where('id', '=', $request->order )->first();
-        $user = $request->user();
         $paymentMethod = $request->input('payment_method');
+
+
+        $user = $request->user();
+        $user->createOrGetStripeCustomer();
+        $user->updateDefaultPaymentMethod($paymentMethod);
+
 
         $seller = User::where('id', '=', $order->seller_id);
 
@@ -208,6 +213,8 @@ class OrdersController extends Controller
             $paymentMethod,
             ['customer' => $user->stripe_id]
         );
+
+
 
         // destination has to be the same -> stripe just gave us one fake account
         //in production should be the account of the seller user
