@@ -7,7 +7,7 @@
         <div class="inner">
             <!-- Header -->
             <header id="header" style="z-index: -2;">
-                <h1  class="logo">My Active Orders</h1>
+                <h1  class="logo">Mis ordenes activas</h1>
             </header>
             <!-- Section -->
             <div class="row row-cols-3 row-cols-md-2 g-4" >

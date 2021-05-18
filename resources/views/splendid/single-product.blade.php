@@ -15,7 +15,7 @@
             </h1>
             <h2>${{$product->price}}</h2>
             <h3>Talla: {{$product->size}}</h3>
-            <h2>Categorias:</h2>
+            <h2>Categorías:</h2>
             <div class="row">
             @foreach ($product->categories as $category)
                 <li class="button category">{{$category->name }}</li>

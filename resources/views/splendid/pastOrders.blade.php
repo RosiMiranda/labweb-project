@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-<h1 class="title">Past Orders</h1>
+<h1 class="title">Ordenes entregadas</h1>
     <div class="container arrows" style="width: 50%;">
         <h4 style="opacity:0%;">hola</h4>
     </div>
