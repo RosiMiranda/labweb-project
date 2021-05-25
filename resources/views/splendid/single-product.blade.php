@@ -7,7 +7,7 @@
         <div class="col-12 col-sm-6 col-product-info">
 
             <h1>{{$product->description}}
-                @if ($user->id == $product->user_id)
+                @if ($user->id == $product->user_id && $product->order_id == null)
                     <a  href="{{ route('splendid.editProduct', ['product' => $product]) }}">
                         <img class="editProduct " src="{{ url('img/edit.png') }}" alt="..." >
                     </a>
@@ -21,13 +21,15 @@
                 <li class="button category">{{$category->name }}</li>
             @endforeach
             </div>
-            @if ($user->id == $product->user_id)
+            @if ($user->id == $product->user_id && $product->order_id == null)
                 <form action="{{route('product.destroy',['product' => $product]) }}" method="POST">
                     @csrf
                     @method('DELETE')
                     <input type="submit" class="button primary mt-3" value="Borrar">
                     {{-- <button type="submit" class="button primary mt-3">Borrar</button>                --}}
                 </form>
+            @elseif($product->order_id != null)
+                <a href=" {{ url('order/'.$product->order_id) }}"><button class="button primary mt-3">Ver la orden</button></a>
             @else
                 <a href=" {{ url('add-to-cart/'.$product->id) }}"><button class="button primary mt-3">Agregar al carrito</button></a>
             @endif
