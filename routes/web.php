@@ -34,6 +34,7 @@ Route::delete('products/{product}','ProductController@destroy')->name('product.d
 Route::get('getOrdersSold','OrdersController@getOrdersSold')->name('orders.get');
 Route::get('add-to-cart/{id}', 'OrdersController@addToCart');
 Route::get('cancel-order/{id}', 'OrdersController@cancelOrder');
+Route::get('complete-order/{id}', 'OrdersController@deliveredOrder');
 Route::get('pastOrders','OrdersController@sendOrders')->name('splendid.pastOrders');
 Route::resource('order', 'OrdersController')->middleware('user_auth');
 // auth and profile

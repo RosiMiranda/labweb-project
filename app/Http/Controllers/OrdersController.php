@@ -67,6 +67,19 @@ class OrdersController extends Controller
 
     }
 
+    public function deliveredOrder($id)
+    {
+        $user = Auth::user();
+
+        $order = Order::where('id', '=', $id)->first();
+        $order -> status = "3";
+
+        $order ->save();
+
+        return redirect()->route('order.index');
+
+    }
+
     public function addToCart($request)
     {
         //traer el producto
