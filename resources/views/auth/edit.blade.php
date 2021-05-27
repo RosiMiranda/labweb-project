@@ -34,7 +34,7 @@
                         </div>
                     </div>
                         <div class="d-flex justify-content-center mt-3">
-                            <input type="submit" value="Submit" class="btn btn:hover">
+                            <input type="submit" value="Editar" class="btn btn:hover">
                         </div>
                     </div>
                 </form>

@@ -7,9 +7,9 @@
 
                 <div class="card">
                 <div class="col-12">
-                    <h3>Order ID: {{$order->id}}</h3>
+                    <h3>ID Orden: {{$order->id}}</h3>
                     <div class="row">
-                        <h3 style="margin:0;">Seller: </h3>
+                        <h3 style="margin:0;">Vendedor: </h3>
                         <p style="margin:0;">{{$seller->name}}</p>
                         <p style="margin:0;">{{$seller->address}}</p>
                     </div>
@@ -42,14 +42,14 @@
                 <form method="POST" action="{{ route('purchase', ['order'=>$order->id]) }}" class="card-form mt-3 mb-3" >
                     @csrf
                     <input type="hidden" name="payment_method" class="payment-method">
-                    <input class="StripeElement mb-3" name="card_holder_name" placeholder="Card holder name" required>
+                    <input class="StripeElement mb-3" name="card_holder_name" placeholder="Titular de la tarjeta" required>
                     <div class="col">
                         <div id="card-element"></div>
                     </div>
                     <div id="card-errors" role="alert"></div>
                     <div class="form-group mt-3">
-                        <button type="submit" class="button primary pay">
-                            Purchase
+                        <button type="enviar" class="button primary pay">
+                            Comprar
                         </button>
                     </div>
                 </form>

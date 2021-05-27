@@ -7,7 +7,7 @@
         <div class="inner">
             <!-- Header -->
             <header id="header" style="z-index: -2;">
-                <h1  class="logo"><strong>Splendid</strong> My Products</h1>
+                <h1  class="logo"><strong>Splendid</strong>Mis productos</h1>
                 <ul class="icons">
                     @foreach ($categories as $category)
                         <x-category title="{{$category->name}}"></x-category>
@@ -15,7 +15,7 @@
                 </ul>
             </header>
             <div class="row col-12" style="z-index: -2;">
-                <h4 style="width:100%; padding:1em;" class="text-center">Descripcion de categoria</h4>
+                <h4 style="width:100%; padding:1em;" class="text-center">Descripcion de categoría</h4>
             </div>
             <!-- Section -->
             <div class="row row-cols-3 row-cols-md-2 g-4" >

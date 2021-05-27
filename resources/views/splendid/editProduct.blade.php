@@ -24,7 +24,7 @@
                             <label  class="form-label">Talla</label>
                             <input value="{{$product->size}}" type="text" class="dark-green green-inputs" name="size">
                         </div>
-                        <input type="submit" value="Submit" class="button primary">
+                        <input type="submit" value="Editar" class="button primary">
                     </div>
                     <div class="col-6">
                         <div class="button-wrapper">

@@ -4,15 +4,15 @@
 <div class="container mt-3 mb-3 align-center" style="min-height:80vh">
     <div class="card" style="border: 1px solid #2F6665;max-width: 600px;">
         <div class="col-12">
-            <h2>Order ID: {{$order->id}}</h2>
+            <h2>ID Orden: {{$order->id}}</h2>
             <div class="row">
                 <div class="col-6">
-                    <h3 style="margin:0;">Buyer</h3>
+                    <h3 style="margin:0;">Comprador</h3>
                     <p style="margin:0;">{{$buyer->name}}</p>
                     <p style="margin:0;">{{$buyer->address}}</p>
                 </div>
                 <div class="col-6">
-                    <h3 style="margin:0;">Seller</h3>
+                    <h3 style="margin:0;">Vendedor</h3>
                     <p style="margin:0;">{{$seller->name}}</p>
                     <p style="margin:0;">{{$seller->address}}</p>
                 </div>
