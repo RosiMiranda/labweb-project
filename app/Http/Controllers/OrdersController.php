@@ -251,4 +251,11 @@ class OrdersController extends Controller
 
         return redirect()->route('order.index');
     }
+    public function sendOrders()
+    {
+        // $orders = Order::where('status', '=', '3')->where('seller_id', '=', $id);
+        // return view('active-orders', ['sell' => $orders]);
+
+        return view('splendid.pastOrders');
+    }
 }
