@@ -29,16 +29,16 @@
                         Bienvenido </br> {{ auth()->user()-> name }}
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="{{ route('user.profile')}}">My Profile</a></li>
-                        <li><a class="dropdown-item" href="{{ route('splendid.index')}}">My Products</a></li>
-                        <li><a class="dropdown-item" href="{{ route('order.index')}}">Active Orders</a></li>
-                        <li><a class="dropdown-item" href="{{ route('splendid.pastOrders')}}">Past Orders</a></li>
-                        <li><a class="dropdown-item" href="{{ route('auth.logout')}}">Log out</a></li>
+                        <li><a class="dropdown-item" href="{{ route('user.profile')}}"><P>Perfil</P></a></li>
+                        <li><a class="dropdown-item" href="{{ route('splendid.index')}}">Mis Productos</a></li>
+                        <li><a class="dropdown-item" href="{{ route('order.index')}}">Ordenes Activas</a></li>
+                        <li><a class="dropdown-item" href="{{ route('splendid.pastOrders')}}">Ordenes Entregadas</a></li>
+                        <li><a class="dropdown-item" href="{{ route('auth.logout')}}">Cerrar sesión</a></li>
                     </ul>
                 </li>
                 @endauth
                 @if (!Auth::check())
-                <a class="button primary" href="{{ route('auth.login')}}"> Sign in</a>
+                <a class="button primary" href="{{ route('auth.login')}}">Iniciar sesión</a>
                 @endif
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,13 +48,13 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{{ route('home.index') }}">Home</a>
+                            <a class="nav-link active" aria-current="page" href="{{ route('home.index') }}">Página Principal</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('store.index') }}" >Store</a>
+                            <a class="nav-link" href="{{ route('store.index') }}" >Tienda</a>
                         </li>
                         <li class="nav-item cart-icon">
-                            <a class="nav-link" href="{{ route('user.cart') }}" >ShoppingCart</a>
+                            <a class="nav-link" href="{{ route('user.cart') }}" >Carrito</a>
                             <span class="material-icons">
                                 shopping_cart
                             </span>
