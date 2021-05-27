@@ -34,17 +34,18 @@
                                 <div class="carousel-item active">
                                     <img src="{{ url('img/ropa1.png') }}" class="d-block w-100" alt="...">
                                 <div class="carousel-caption d-none d-md-block">
-                                        <h5>50% de descuento</h5>
-                                        <p>Solo del 22 al 30 de Abril</p>
+                                        <h5>{</h5>
+                                        <p></p>
                                 </div>
                                 </div>
+                                        @foreach ($products as $product)
                                 <div class="carousel-item">
-                                    <img src="{{ url('img/ropa2.png') }}" class="d-block w-100" alt="...">
+                                    <img src="uploads/products/{{$product->file_path}}" class="card-img-top" alt="...">
                                 <div class="carousel-caption d-none d-md-block">
-                                <h5>50% de descuento</h5>
-                                        <p>Solo del 22 al 30 de Abril</p>
+                                        <p>{{$product->description}}</p>
                                 </div>
                                 </div>
+                            @endforeach
                             </div>
                             <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
