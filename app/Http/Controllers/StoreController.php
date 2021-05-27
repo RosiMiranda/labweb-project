@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use App\Category;
-use App\ProductCategory;
+use App\CategoryProduct;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -18,6 +18,29 @@ class StoreController extends Controller
     public function index()
     {
         $products = Product::where('order_id', null)->get();
+        $categories = Category::all();
+        return view('splendid.store-products',['products' => $products,'categories' => $categories]);
+    }
+
+    /**
+     * Display a listing of the resource based on selected category.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function myFiltered(Category $filter)
+    {
+        $products = Product::where('order_id', null)->whereHas('categories', function($q) use($filter){
+            $q->where('categories.id', $filter->id);
+        })->get();
+        $categories = Category::all();
+        return view('splendid.my-products',['products' => $products,'categories' => $categories]);
+    }
+
+    public function showFiltered(Category $filter)
+    {
+        $products = Product::where('order_id', null)->whereHas('categories', function($q) use($filter){
+            $q->where('categories.id', $filter->id);
+        })->get();
         $categories = Category::all();
         return view('splendid.store-products',['products' => $products,'categories' => $categories]);
     }

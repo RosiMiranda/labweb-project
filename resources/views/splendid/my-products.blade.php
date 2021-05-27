@@ -10,7 +10,9 @@
                 <h1  class="logo"><strong>Splendid</strong>Mis productos</h1>
                 <ul class="icons">
                     @foreach ($categories as $category)
-                        <x-category title="{{$category->name}}"></x-category>
+                        <a href="{{ route('product.myFiltered', ['filter' => $category]) }}">
+                            <x-category title="{{$category->name}}"></x-category>
+                        </a>
                     @endforeach
                 </ul>
             </header>
