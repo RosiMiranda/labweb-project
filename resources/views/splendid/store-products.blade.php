@@ -14,9 +14,7 @@
                     @endforeach
                 </ul>
             </header>
-            <div class="row col-12" style="z-index: -2;">
-                <h4 style="width:100%; padding:1em;" class="text-center">Descripcion de categoría</h4>
-            </div>
+            <br>
             <!-- Section -->
             <div class="row row-cols-3 row-cols-md-2 store" >
                 @foreach ($products as $product)

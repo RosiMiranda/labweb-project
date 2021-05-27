@@ -21,7 +21,7 @@
                                 <div class="card-body">
                                     <h3 style="margin:0;">Id Orden: {{$order->id}}</h3>
                                     <h4 style="margin:0;"> Total: ${{$order->total}}mxn</h4>
-                                    <button class="button ">Entregado</button>
+                                    <a href="{{ url('complete-order/'.$order->id) }}"><button class="button mt-2">Entregar</button></a>
                                     <a href="{{ route('order.show', ['order' => $order]) }}"><button class="button primary mt-2">Ver</button></a>
                                 </div>
                             </div>
