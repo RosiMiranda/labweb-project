@@ -111,7 +111,7 @@ class OrdersController extends Controller
 
     public function sendOrders()
     {
-        // $orders = Order::where('status', '=', '1')->where('seller_id', '=', $id);
+        // $orders = Order::where('status', '=', '3')->where('seller_id', '=', $id);
         // return view('active-orders', ['sell' => $orders]);
 
         return view('splendid.pastOrders');
