@@ -26,6 +26,8 @@ Route::resource('home', 'HomeController');
 
 // products
 Route::get('products/{product}','StoreController@show')->name('product.show');
+Route::get('showFiltered/{filter}','StoreController@showFiltered')->name('product.showFiltered');
+Route::get('myFiltered/{filter}','StoreController@myFiltered')->name('product.myFiltered');
 Route::get('my_products/{product}','ProductController@show')->name('my_product.show');
 Route::get('editProduct/{product}','ProductController@editProduct')->name('splendid.editProduct');
 Route::post('doEditProduct/{product}','ProductController@doEditProduct')->name('splendid.doEditProduct');

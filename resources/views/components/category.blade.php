@@ -1,6 +1,6 @@
 
 <li>
-    <a class="button">
+    <span class="button">
         {{ $title }}
-    </a>
+    </span>
 </li>
