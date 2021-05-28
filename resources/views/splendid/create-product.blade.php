@@ -40,7 +40,7 @@
                                     photo_camera
                                 </span>
                             </span>
-                            <input type="file" id="upload" class="upload-box" name="file">
+                            <input type="file" id="upload" class="upload-box" name="file" required>
                         </div>
                     </div>
                 </div>

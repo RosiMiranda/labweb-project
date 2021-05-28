@@ -7,18 +7,9 @@
         <div class="inner">
             <!-- Header -->
             <header id="header" style="z-index: -2;">
-                <h1  class="logo"><strong>Splendid</strong>Mis productos</h1>
-                <ul class="icons">
-                    @foreach ($categories as $category)
-                        <a href="{{ route('product.myFiltered', ['filter' => $category]) }}">
-                            <x-category title="{{$category->name}}"></x-category>
-                        </a>
-                    @endforeach
-                </ul>
+                <h1  class="logo"><strong>Splendid </strong>Mis productos</h1>
             </header>
-            <div class="row col-12" style="z-index: -2;">
-                <h4 style="width:100%; padding:1em;" class="text-center">Descripcion de categoría</h4>
-            </div>
+            <br>
             <!-- Section -->
             <div class="row row-cols-3 row-cols-md-2 g-4" >
                 <!-- New Product "card" -->

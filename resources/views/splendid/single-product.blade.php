@@ -9,7 +9,7 @@
             <h1>{{$product->description}}
                 @if ($user->id == $product->user_id && $product->order_id == null)
                     <a  href="{{ route('splendid.editProduct', ['product' => $product]) }}">
-                        <img class="editProduct " src="{{ url('img/edit.png') }}" alt="..." >
+                        <img class="editProduct " id="edit-product"src="{{ url('img/edit.png') }}" alt="..." >
                     </a>
                 @endif
             </h1>

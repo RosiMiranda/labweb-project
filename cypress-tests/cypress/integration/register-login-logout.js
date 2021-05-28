@@ -37,7 +37,7 @@ describe('register-login-logout', () => {
 
     it('Logins', () => {
 
-        cy.contains('Iniciar sesión').click({ force: true });
+      cy.contains('Iniciar sesión').click({ force: true });
 
       cy.url().should('include', '/login');
 
