@@ -1,39 +1,43 @@
-var name = 'Azul'
+var name = 'Verde'
 var address = 'Mi casa'
-var email = 'azul@email.com';
+var email = 'verde@email.com';
 var password = '12345'
 
 describe('register-login-logout', () => {
+    it('Register', () => {
+        cy.on('uncaught:exception', () => false);
+  
+        cy.visit('http://labweb-project.test/home');
+    
+        cy.contains('Iniciar sesión').click({ force: true });
+    
+        cy.url().should('include', '/login');
+  
+        cy.contains('Registrate').click({ force: true });
+  
+        cy.url().should('include', '/register');
+  
+        cy.get('[name="name"]')
+            .type(name);
+  
+        cy.get('[name="email"]')
+            .type(email);
+  
+        cy.get('[name="address"]')
+            .type(address);
+  
+        cy.get('[name="password"]')
+            .type(password);
+  
+        cy.get('[name="password_confirmation"]')
+            .type(password);
+  
+        cy.get('#register-button').click();
+    })
+
     it('Logins', () => {
-  
-      cy.on('uncaught:exception', () => false);
-  
-      cy.visit('http://labweb-project.test/home');
-  
-      cy.contains('Iniciar sesión').click({ force: true });
-  
-      cy.url().should('include', '/login');
 
-      cy.contains('Registrate').click({ force: true });
-
-      cy.url().should('include', '/register');
-
-      cy.get('[name="name"]')
-          .type(name);
-
-      cy.get('[name="email"]')
-          .type(email);
-
-      cy.get('[name="address"]')
-          .type(address);
-
-      cy.get('[name="password"]')
-          .type(password);
-
-      cy.get('[name="password_confirmation"]')
-          .type(password);
-
-      cy.get('#register-button').click();
+        cy.contains('Iniciar sesión').click({ force: true });
 
       cy.url().should('include', '/login');
 
@@ -47,11 +51,15 @@ describe('register-login-logout', () => {
 
       cy.contains(name);
 
-      cy.contains(name).click({ force: true });
+    })
 
-      cy.contains('Cerrar sesión').click({ force: true });
+    it('Logouts', () => {
 
-      cy.url().should('include', '/login');
+        cy.contains(name).click({ force: true });
+
+        cy.contains('Cerrar sesión').click({ force: true });
+  
+        cy.url().should('include', '/login');
 
     })
     
