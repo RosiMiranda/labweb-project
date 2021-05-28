@@ -45,7 +45,7 @@
                     <div class="row justify-content-center">
                         <div class="col-8 ">
                             <br>
-                            <input type="submit" value="Registar" class="btn btn:hover">
+                            <input type="submit" value="Registar" class="btn btn:hover" id="register-button">
                         </div>
                     </div>
                 </form>
