@@ -1,3 +1,4 @@
+//Cambia variables a valores de entidades exitentes antes de correr la prueba
 var email = 'rosa@email.com';
 var userName = 'Rosa';
 var password = '12345';

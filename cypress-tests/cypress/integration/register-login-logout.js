@@ -1,3 +1,4 @@
+//Cambia variables a valores de entidades exitentes antes de correr la prueba
 var name = 'Verde'
 var address = 'Mi casa'
 var email = 'verde@email.com';
