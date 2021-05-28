@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 // Oscar commit test
 
 Route::get('/', function () {
-    return view('home.index');
+    return redirect()->route('home.index');
 });
 
 // main
