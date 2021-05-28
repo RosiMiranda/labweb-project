@@ -6,18 +6,16 @@
     <div id="main">
         <div class="inner">
             <!-- Header -->
-            <button>test</button>
             <header id="header" style="z-index: -2;">
                 <h1  class="logo"><strong>Splendid</strong> Tienda</h1>
-                <ul class="icons">
-                    
-                    @foreach ($categories as $category)
-                        <a href="{{ route('product.showFiltered', ['filter' => $category]) }}">
-                            <x-category title="{{$category->name}}"></x-category>
-                        </a>
-                    @endforeach
-                </ul>
             </header>
+            <ul class="icons">
+            @foreach ($categories as $category)
+                <a href="{{ route('product.showFiltered', ['filter' => $category]) }}">
+                    <x-category title="{{$category->name}}"></x-category>
+                </a>
+            @endforeach
+            </ul>
             <br>
             <!-- Section -->
             <div class="row row-cols-3 row-cols-md-2 store" >
