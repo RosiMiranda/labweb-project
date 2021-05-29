@@ -1,7 +1,7 @@
 //Cambia variables a valores de entidades exitentes antes de correr la prueba
-var name = 'Verde'
-var address = 'Mi casa'
-var email = 'verde@email.com';
+var name = 'Sandra'
+var address = 'Circuito Rinconada San Miguel #81'
+var email = 'sandra@email.com';
 var password = '12345'
 
 describe('register-login-logout', () => {

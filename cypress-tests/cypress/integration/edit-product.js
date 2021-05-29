@@ -1,13 +1,13 @@
 //Cambia variables a valores de entidades exitentes antes de correr la prueba
-var email = 'verde@email.com';
-var userName = 'Verde';
+var email = 'rosa@email.com';
+var userName = 'Rosa';
 var password = '12345';
-var productId= '1'
-var oldDescription = 'Azules, de mezclilla';
-var oldPrecio = '200';
+var productId= '3'
+var oldDescription = 'Vestido largo usado una vez';
+var oldPrecio = '500';
 var oldTalla = 'M';
-var newDescription = 'Azules, de mezclilla clara';
-var newPrecio = '500';
+var newDescription = 'Vestido usado';
+var newPrecio = '400';
 var newTalla = 'L';
 
 describe('product-edition', () => {

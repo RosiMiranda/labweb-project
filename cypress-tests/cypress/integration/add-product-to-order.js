@@ -2,8 +2,8 @@
 var email = 'rosa@email.com';
 var userName = 'Rosa';
 var password = '12345';
-var productDescription = 'Azules, de mezclilla';
-var precio = '500';
+var productDescription = 'Vestido usado';
+var precio = '400';
 
 describe('product-to-order', () => {
 

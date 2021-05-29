@@ -254,7 +254,7 @@ class OrdersController extends Controller
     public function sendOrders(Request $req)
     {
         $user = Auth::user();
-        $orders = Order::where('buyer_id', '=', $user->id)->where('status', '=', '3')->get();
+        $orders = Order::where('seller_id', '=', $user->id)->where('status', '=', '3')->get();
         return view('splendid.pastOrders', ['orders' => $orders]);
     }
 }

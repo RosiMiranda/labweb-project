@@ -10,9 +10,9 @@
 														<table>
 															<thead>
 																<tr>
-																	<th>Order</th>
+																	<th>Orden</th>
 																	<th>Total</th>
-																	<th>ststus</th>
+																	<th>Estado</th>
 																</tr>
 															</thead>
 															<tbody>

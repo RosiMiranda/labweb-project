@@ -2,9 +2,9 @@
 var email = 'rosa@email.com';
 var userName = 'Rosa';
 var password = '12345';
-var productDescription = 'Azules, de mezclilla';
-var precio = '500';
-var orderId = '5';
+var productDescription = 'Vestido usado solamente una vez';
+var precio = '100';
+var orderId = '2';
 
 describe('verify-active-order', () => {
 
